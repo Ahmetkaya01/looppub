@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html.dark {
+    color-scheme: dark;
+    --background: #0a0a0c;
+    --foreground: #f4efe6;
+    --muted: rgba(244, 239, 230, 0.72);
+    --surface: rgba(14, 14, 16, 0.88);
+    --card: rgba(24, 24, 28, 0.78);
+    --border: rgba(212, 175, 55, 0.24);
+    --section-alt: #121214;
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --hero-scrim: rgba(0, 0, 0, 0.5);
+    --hero-gradient-from: rgba(0, 0, 0, 0.72);
+    --hero-gradient-via: rgba(0, 0, 0, 0.4);
+    --hero-headline: #ffffff;
+    --hero-subtitle: rgba(255, 255, 255, 0.92);
+    --on-accent: #0a0a0c;
+    --input-placeholder: rgba(244, 239, 230, 0.45);
+  }
+
+  html.light {
+    color-scheme: light;
+    --background: #f6f3ed;
+    --foreground: #141820;
+    --muted: rgba(20, 24, 32, 0.65);
+    --surface: rgba(255, 255, 255, 0.92);
+    --card: #ffffff;
+    --border: rgba(168, 132, 48, 0.4);
+    --section-alt: #ebe7df;
+    --shadow-glass: 0 10px 36px rgba(20, 24, 32, 0.1);
+    --hero-scrim: rgba(20, 24, 32, 0.35);
+    --hero-gradient-from: rgba(20, 24, 32, 0.62);
+    --hero-gradient-via: rgba(20, 24, 32, 0.3);
+    --hero-headline: #ffffff;
+    --hero-subtitle: rgba(255, 255, 255, 0.94);
+    --on-accent: #141820;
+    --input-placeholder: rgba(20, 24, 32, 0.4);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  #home,
+  #about,
+  #menu,
+  #gallery,
+  #feedback,
+  #contact {
+    scroll-margin-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-page font-body text-ink antialiased transition-[background-color,color] duration-500;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-ink;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--input-placeholder);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-20 lg:py-28;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-medium tracking-wide text-ink md:text-4xl lg:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mt-3 max-w-2xl font-body text-sm leading-relaxed text-subtle md:text-base;
+  }
+
+  .gold-divider {
+    @apply mx-auto mt-6 h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+
+  .glass-card {
+    @apply rounded-lg border border-[var(--border)] bg-[var(--card)] backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-500;
+    box-shadow: var(--shadow-glass);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md border border-gold bg-gold/15 px-8 py-3.5 font-body text-sm font-medium uppercase tracking-[0.2em] text-gold shadow-neon-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:shadow-neon;
+  }
+
+  .btn-primary:hover {
+    color: var(--on-accent);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-[var(--border)] bg-[var(--surface)] px-8 py-3.5 font-body text-sm font-medium uppercase tracking-[0.2em] text-ink backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold;
+  }
+
+  html.light .btn-secondary:hover {
+    @apply shadow-md;
+  }
+
+  .btn-neon {
+    @apply btn-primary shadow-neon;
+  }
+
+  html.light .btn-neon {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+  }
+
+  .menu-card {
+    @apply glass-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-neon-gold;
+  }
+
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .bg-section-alt {
+    background-color: var(--section-alt);
+  }
+
+  .hero-overlay-scrim {
+    background-color: var(--hero-scrim);
+  }
+
+  .hero-overlay-gradient {
+    background: linear-gradient(
+      to bottom,
+      var(--hero-gradient-from),
+      var(--hero-gradient-via),
+      var(--background)
+    );
+  }
+
+  .hero-headline-line1 {
+    color: #ffffff;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.9);
+  }
+
+  .hero-headline-line2 {
+    color: #d4af37;
+    text-shadow:
+      0 2px 24px rgba(0, 0, 0, 0.9),
+      0 0 40px rgba(212, 175, 55, 0.35);
+  }
+
+  .hero-subtitle {
+    color: var(--hero-subtitle);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
+  }
+
+  .hero-btn-secondary {
+    @apply !border-white/40 !bg-white/10 !text-white backdrop-blur-sm hover:!border-gold hover:!text-gold;
+  }
+}
