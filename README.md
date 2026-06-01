@@ -24,9 +24,26 @@ Open **http://localhost:301** (port **301**, not 3000).
 
 On your phone (same Wi‑Fi): `http://<your-computer-ip>:301` (e.g. `192.168.1.21:301`).
 
-## Production
+## Production (Vercel + GitHub)
 
-Deployed site: [www.looppub.live](https://www.looppub.live) — may differ from local until you deploy the latest build from this folder.
+1. Push this repo to GitHub (see below).
+2. Import the repo at [vercel.com/new](https://vercel.com/new).
+3. **Root Directory:** leave as `.` (repo root is this project).
+4. **Framework:** Next.js (auto-detected).
+5. Deploy, then add custom domain **www.looppub.live** in Vercel → Project → Settings → Domains.
+
+Deployed site: [www.looppub.live](https://www.looppub.live)
+
+## Push to GitHub
+
+From this folder (`loop-pub`):
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/loop-pub.git
+git push -u origin main
+```
+
+Create the empty repo first on GitHub: **New repository** → name `loop-pub` → do **not** add README (this project already has one).
 
 ## Project structure
 
