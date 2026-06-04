@@ -1,4 +1,5 @@
-import { MENU_TAB_CATEGORIES } from "./menu-tabs";
+import type { MenuConfigResponse } from "./limon-menu";
+import { MENU_TAB_IDS } from "./menu-tabs";
 
 export {
   MENU_TAB_IDS,
@@ -7,6 +8,8 @@ export {
   isCocktailCategory,
   type MenuTabId,
 } from "./menu-tabs";
+
+export type { MenuConfigResponse, MenuTabConfig, MenuCategoryMeta } from "./limon-menu";
 
 export interface MenuProductUnit {
   label: string;
@@ -34,6 +37,21 @@ export interface MenuCategoryPayload {
   };
   products: MenuProduct[];
   subcategories?: MenuSubcategory[];
+}
+
+let menuConfigCache: MenuConfigResponse | null = null;
+
+export async function fetchMenuConfig(): Promise<MenuConfigResponse> {
+  if (menuConfigCache) return menuConfigCache;
+  const res = await fetch("/api/menu", { cache: "no-store" });
+  if (!res.ok) throw new Error("menu config failed");
+  const data: MenuConfigResponse = await res.json();
+  menuConfigCache = data;
+  return data;
+}
+
+export function clearMenuConfigCache() {
+  menuConfigCache = null;
 }
 
 export function formatMenuPrice(price: string): string {
@@ -82,12 +100,26 @@ export type MenuProductWithCategory = MenuProduct & { categoryId: number };
 
 export async function fetchTabProducts(
   tabId: import("./menu-tabs").MenuTabId,
+  config?: MenuConfigResponse,
 ): Promise<MenuProductWithCategory[]> {
-  const ids = MENU_TAB_CATEGORIES[tabId];
+  const menuConfig = config ?? (await fetchMenuConfig());
+  const tab = menuConfig.tabs.find((t) => t.id === tabId);
+  const ids = tab?.categoryIds ?? [];
+
   const merged: MenuProductWithCategory[] = [];
   for (const categoryId of ids) {
     const items = await fetchCategoryProducts(categoryId);
     items.forEach((p) => merged.push({ ...p, categoryId }));
   }
   return Array.from(new Map(merged.map((p) => [p.id, p])).values());
+}
+
+export function isCocktailCategoryId(
+  categoryId: number,
+  config?: MenuConfigResponse,
+): boolean {
+  const ids =
+    config?.cocktailCategoryIds ??
+    (menuConfigCache?.cocktailCategoryIds ?? []);
+  return ids.includes(categoryId);
 }

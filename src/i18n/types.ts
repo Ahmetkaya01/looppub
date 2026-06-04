@@ -1,4 +1,4 @@
-export type Locale = "tr" | "en";
+export type Locale = "tr" | "en" | "ru";
 
 export type MenuTabId = "snacks" | "beers" | "cocktails";
 
@@ -20,6 +20,7 @@ export interface Translations {
   hero: {
     ariaLabel: string;
     eyebrow: string;
+    slogan: string;
     headlineLine1: string;
     headlineLine2: string;
     subtitle: string;
@@ -90,6 +91,6 @@ export interface Translations {
     formMessage: string;
     formSubmit: string;
   };
-  language: { switchTo: string; tr: string; en: string };
+  language: { switchTo: string; tr: string; en: string; ru: string };
   theme: { switchToLight: string; switchToDark: string };
 }

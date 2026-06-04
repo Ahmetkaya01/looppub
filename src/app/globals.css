@@ -165,4 +165,21 @@
   .hero-btn-secondary {
     @apply !border-white/40 !bg-white/10 !text-white backdrop-blur-sm hover:!border-gold hover:!text-gold;
   }
+
+  .hero-slogan {
+    color: #e8c96a;
+    text-shadow:
+      0 2px 20px rgba(0, 0, 0, 0.85),
+      0 0 48px rgba(212, 175, 55, 0.25);
+  }
+
+  .menu-tab-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .menu-tab-scroll::-webkit-scrollbar {
+    display: none;
+  }
 }

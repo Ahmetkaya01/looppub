@@ -12,6 +12,7 @@ import {
   DEFAULT_LOCALE,
   getTranslations,
   LOCALE_STORAGE_KEY,
+  LOCALES,
   type Locale,
   type Translations,
 } from "./index";
@@ -24,10 +25,14 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+function isLocale(value: string | null): value is Locale {
+  return value !== null && (LOCALES as string[]).includes(value);
+}
+
 function readStoredLocale(): Locale {
   if (typeof window === "undefined") return DEFAULT_LOCALE;
   const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
-  return stored === "en" || stored === "tr" ? stored : DEFAULT_LOCALE;
+  return isLocale(stored) ? stored : DEFAULT_LOCALE;
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {

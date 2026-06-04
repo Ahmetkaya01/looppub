@@ -24,6 +24,7 @@ export const tr: Translations = {
   hero: {
     ariaLabel: "Giriş",
     eyebrow: "Tokat · Premium Pub & Bar",
+    slogan: "A new story begins",
     headlineLine1: "Stay in",
     headlineLine2: "Loop",
     subtitle:
@@ -115,6 +116,7 @@ export const tr: Translations = {
     switchTo: "Dil",
     tr: "TR",
     en: "EN",
+    ru: "RU",
   },
   theme: {
     switchToLight: "Açık temaya geç",

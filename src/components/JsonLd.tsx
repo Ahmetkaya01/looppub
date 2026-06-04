@@ -10,7 +10,7 @@ export default function JsonLd() {
       name: SITE_NAME,
       description:
         "Premium pub and bar in Tokat — music, craft beer, signature cocktails.",
-      inLanguage: ["tr-TR", "en"],
+      inLanguage: ["tr-TR", "en", "ru"],
       publisher: { "@id": `${SITE_URL}/#business` },
     },
     {
@@ -50,7 +50,7 @@ export default function JsonLd() {
           "Sunday",
         ],
         opens: "12:00",
-        closes: "01:00",
+        closes: "00:00",
       },
       sameAs: [CONTACT.social.instagram, CONTACT.social.facebook],
       hasMap: CONTACT.mapsUrl,
@@ -70,7 +70,7 @@ export default function JsonLd() {
       name: `${SITE_NAME} | Tokat`,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#business` },
-      inLanguage: ["tr-TR", "en"],
+      inLanguage: ["tr-TR", "en", "ru"],
     },
     {
       "@type": "FAQPage",
@@ -81,7 +81,7 @@ export default function JsonLd() {
           name: "What are Loop Pub opening hours?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Loop Pub is open daily from 12:00 to 01:00.",
+            text: "Loop Pub is open daily from 12:00 PM to 12:00 AM.",
           },
         },
         {

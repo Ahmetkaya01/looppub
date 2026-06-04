@@ -12,7 +12,7 @@ export const CONTACT = {
   phone: ["0543 952 56 82"],
   phoneTel: "+905439525682",
   email: "info@looppub.live",
-  hours: "12:00 – 01:00",
+  hours: "12:00 PM – 12:00 AM",
   mapsUrl: "https://maps.app.goo.gl/ftsYqPcCC7LBeabR9",
   social: {
     instagram: "https://www.instagram.com/looppub/",

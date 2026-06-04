@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-const MENU_API_BASE =
-  "https://123.limonpos.com.tr/nexopos/v4/products/category";
+import { fetchLimonCategoryJson } from "@/lib/limon-menu";
 
 export const revalidate = 3600;
 export const preferredRegion = ["fra1", "cdg1", "iad1"];
@@ -17,14 +16,7 @@ export async function GET(
   }
 
   try {
-    const res = await fetch(`${MENU_API_BASE}/${id}`, {
-      headers: {
-        Accept: "application/json",
-        "User-Agent": "LoopPub/1.0 (looppub.live)",
-      },
-      next: { revalidate: 3600 },
-      signal: AbortSignal.timeout(15000),
-    });
+    const res = await fetchLimonCategoryJson(id);
 
     if (!res.ok) {
       return NextResponse.json(

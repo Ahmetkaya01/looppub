@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-[70] transition-all duration-500 ${
         scrolled || menuOpen
           ? "border-b border-[var(--border)] bg-[var(--surface)] shadow-glass backdrop-blur-xl"
           : "bg-[var(--surface)]/40 backdrop-blur-md"
@@ -101,32 +101,35 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`fixed inset-0 top-[72px] z-40 bg-[var(--surface)] backdrop-blur-xl transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[60] bg-[var(--surface)] transition-opacity duration-300 lg:hidden ${
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
+        aria-hidden={!menuOpen}
       >
-        <ul className="flex flex-col items-center gap-7 py-12">
-          {navLinks.map((link) => (
-            <li key={link.href}>
+        <div className="flex h-full flex-col overflow-y-auto pt-[72px]">
+          <ul className="flex flex-col items-center gap-7 px-6 py-10">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="font-display text-2xl text-ink transition-colors hover:text-gold"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="mt-2 w-full max-w-xs">
               <Link
-                href={link.href}
-                className="font-display text-2xl text-ink hover:text-gold"
+                href="#contact"
+                className="btn-primary w-full justify-center"
                 onClick={() => setMenuOpen(false)}
               >
-                {link.label}
+                {t.nav.reserve}
               </Link>
             </li>
-          ))}
-          <li className="mt-4">
-            <Link
-              href="#contact"
-              className="btn-primary"
-              onClick={() => setMenuOpen(false)}
-            >
-              {t.nav.reserve}
-            </Link>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </header>
   );

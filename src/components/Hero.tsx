@@ -39,7 +39,11 @@ export default function Hero() {
             {t.hero.eyebrow}
           </p>
 
-          <h1 className="hero-headline mt-6 font-display font-semibold">
+          <p className="hero-slogan mx-auto mt-5 max-w-3xl font-display text-2xl font-normal italic leading-snug tracking-[0.08em] sm:mt-6 sm:text-3xl md:text-4xl">
+            {t.hero.slogan}
+          </p>
+
+          <h1 className="hero-headline mt-8 font-display font-semibold sm:mt-10">
             <span className="hero-headline-line1 block text-4xl tracking-wide sm:text-5xl md:text-6xl">
               {t.hero.headlineLine1}
             </span>
