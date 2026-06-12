@@ -1,26 +1,31 @@
+"use client";
+
 import { CONTACT, HOURS } from "@/lib/constants";
+import { useLocale } from "@/context/LocaleContext";
 import SectionHeading from "./ui/SectionHeading";
 import MotionReveal from "./ui/MotionReveal";
 
 export default function ContactSection() {
+  const { t } = useLocale();
+
   return (
     <section
       id="contact"
       className="section-padding"
-      aria-label="Rezervasyon ve iletişim"
+      aria-label={t.contact.aria}
     >
       <div className="mx-auto max-w-5xl">
         <SectionHeading
-          eyebrow="Rezervasyon"
-          title="Hızlı Rezervasyon & İletişim"
-          subtitle="Masanızı saniyeler içinde ayırtın — tek dokunuşla arayın veya WhatsApp'tan yazın."
+          eyebrow={t.contact.eyebrow}
+          title={t.contact.title}
+          subtitle={t.contact.subtitle}
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <MotionReveal delay={0.05}>
             <div className="glass-panel flex h-full flex-col gap-4 rounded-lg p-8">
               <h3 className="font-display text-xl font-bold uppercase">
-                Bize Ulaşın
+                {t.contact.reachUs}
               </h3>
               <a
                 href={CONTACT.phoneTel}
@@ -36,28 +41,41 @@ export default function ContactSection() {
                 {CONTACT.phoneDisplay}
               </a>
               <a
-                href={CONTACT.whatsappUrl}
+                href={t.whatsapp.reservation}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-sm border border-[#25D366]/60 px-6 text-sm font-bold uppercase tracking-cta text-[#25D366] transition-colors hover:bg-[#25D366]/10"
               >
-                WhatsApp ile Hızlı Rezervasyon
+                {t.contact.whatsappQuick}
               </a>
-              <a
-                href={CONTACT.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 text-sm leading-relaxed text-muted transition-colors hover:text-amber"
-              >
+              <p className="mt-2 text-sm leading-relaxed text-muted">
                 {CONTACT.address}
-              </a>
+              </p>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={CONTACT.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center rounded-sm bg-amber/90 px-5 text-xs font-bold uppercase tracking-cta text-night transition-colors hover:bg-amber"
+                >
+                  {t.location.openMap}
+                </a>
+                <a
+                  href={CONTACT.mapsDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center rounded-sm border border-amber/40 px-5 text-xs font-bold uppercase tracking-cta text-amber transition-colors hover:bg-amber/10"
+                >
+                  {t.location.directions}
+                </a>
+              </div>
             </div>
           </MotionReveal>
 
           <MotionReveal delay={0.12}>
             <div className="glass-panel flex h-full flex-col rounded-lg p-8">
               <h3 className="font-display text-xl font-bold uppercase">
-                Çalışma Saatleri
+                {t.contact.hoursTitle}
               </h3>
               <dl className="mt-6 space-y-4">
                 {HOURS.map((row) => (
@@ -66,7 +84,7 @@ export default function ContactSection() {
                     className="flex items-baseline justify-between border-b border-white/10 pb-4"
                   >
                     <dt className="text-sm uppercase tracking-cta text-muted">
-                      {row.label}
+                      {t.contact.hoursLabel}
                     </dt>
                     <dd className="font-display text-lg font-bold text-amber">
                       {row.value}
@@ -74,10 +92,14 @@ export default function ContactSection() {
                   </div>
                 ))}
               </dl>
-              <p className="mt-auto pt-6 text-xs text-muted/80">
-                Yoğun günlerde rezervasyonsuz masa bulmak zor olabilir —
-                önceden yerinizi ayırtmanızı öneririz.
-              </p>
+              <div
+                className="mt-auto rounded-md border border-amber/35 bg-amber/10 px-4 py-4 pt-6"
+                role="note"
+              >
+                <p className="text-sm font-semibold leading-relaxed text-amber md:text-base">
+                  {t.contact.busyNote}
+                </p>
+              </div>
             </div>
           </MotionReveal>
         </div>

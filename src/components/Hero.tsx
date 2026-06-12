@@ -7,12 +7,15 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { useLocale } from "@/context/LocaleContext";
 import { fadeInUp, staggerContainer } from "@/lib/motion";
 import { HERO_POSTER_URL, HERO_VIDEO_URL } from "@/lib/constants";
 import Button from "./ui/Button";
+import LazyHeroVideo from "./ui/LazyHeroVideo";
 import Particles from "./ui/Particles";
 
 export default function Hero() {
+  const { t } = useLocale();
   const reduced = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -30,22 +33,13 @@ export default function Hero() {
       ref={sectionRef}
       id="home"
       className="relative h-screen min-h-[100dvh] overflow-hidden"
-      aria-label="Loop Pub & Bar giriş"
+      aria-label={t.hero.aria}
     >
       <motion.div
         className="absolute inset-0"
         style={reduced ? undefined : { scale: videoScale }}
       >
-        <video
-          className="h-full w-full object-cover"
-          src={HERO_VIDEO_URL}
-          poster={HERO_POSTER_URL}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        />
+        <LazyHeroVideo src={HERO_VIDEO_URL} poster={HERO_POSTER_URL} />
       </motion.div>
 
       <div className="absolute inset-0 bg-[var(--overlay-hero)]" />
@@ -71,7 +65,7 @@ export default function Hero() {
           variants={reduced ? undefined : fadeInUp}
           className="eyebrow"
         >
-          Premium Pub &amp; Lounge
+          {t.hero.tagline}
         </motion.p>
 
         <motion.h1
@@ -88,8 +82,7 @@ export default function Hero() {
           style={reduced ? undefined : { y: subY }}
           className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg"
         >
-          İmza kokteyller, craft biralar ve şehrin en iyi müziği.
-          Geceniz burada başlasın.
+          {t.hero.body}
         </motion.p>
 
         <motion.div
@@ -97,9 +90,9 @@ export default function Hero() {
           style={reduced ? undefined : { y: subY }}
           className="mt-10 flex w-full max-w-md flex-col gap-4 sm:flex-row sm:justify-center"
         >
-          <Button href="/menu">Menü</Button>
+          <Button href="/menu">{t.common.menu}</Button>
           <Button href="#contact" variant="outline">
-            Rezervasyon Yap
+            {t.common.reservationCta}
           </Button>
         </motion.div>
       </motion.div>

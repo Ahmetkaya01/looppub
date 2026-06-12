@@ -77,4 +77,32 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .premium-scroll-track {
+    scroll-padding-inline: 1.25rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .premium-scroll-track {
+      scroll-padding-inline: 2.5rem;
+      padding-inline: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .premium-scroll-track {
+      scroll-padding-inline: max(2.5rem, calc((100vw - 72rem) / 2 + 2.5rem));
+      padding-inline: max(2.5rem, calc((100vw - 72rem) / 2 + 2.5rem));
+    }
+  }
+
+  .premium-scroll-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
 }

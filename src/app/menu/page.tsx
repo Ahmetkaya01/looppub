@@ -1,55 +1,42 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getMenuCategories } from "@/lib/menu";
-import { CONTACT, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { getGelAlMenuCategories, getMenuCategories } from "@/lib/menu";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import MenuClient from "@/components/menu/MenuClient";
+import { MenuPageFooter, MenuPageHeader } from "@/components/MenuPageChrome";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "Menü",
   description:
-    "Loop Pub & Bar menü — biralar, imza kokteyller, viskiler, şaraplar, atıştırmalıklar, sıcak ve soğuk içecekler. Güncel fiyatlarla tam menü.",
+    "Tokat Merkez Loop Pub & Bar menüsü — imza kokteyller, craft biralar, viskiler, şaraplar ve atıştırmalıklar. Güncel fiyatlarla tam menü.",
   alternates: { canonical: `${SITE_URL}/menu` },
   openGraph: {
     title: `Menü | ${SITE_NAME}`,
-    description: "Loop Pub & Bar güncel menüsü ve fiyatları.",
+    description:
+      "Tokat Merkez Loop Pub güncel menüsü ve fiyatları — kokteyller, biralar ve daha fazlası.",
     url: `${SITE_URL}/menu`,
     type: "website",
   },
 };
 
-export default function MenuPage() {
-  const categories = getMenuCategories();
+export default async function MenuPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ "gel-al"?: string }>;
+}) {
+  const params = await searchParams;
+  const isGelAl = params["gel-al"] === "1";
+  const categories = isGelAl ? getGelAlMenuCategories() : getMenuCategories();
 
   return (
     <>
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
-          <Link
-            href="/"
-            className="font-display text-base font-extrabold uppercase tracking-wide"
-          >
-            Loop <span className="text-amber">Pub</span>
-          </Link>
-          <h1 className="font-display text-base font-bold uppercase tracking-cta">
-            Menü
-          </h1>
-          <a
-            href={CONTACT.phoneTel}
-            className="text-xs font-semibold uppercase tracking-cta text-amber"
-          >
-            Ara
-          </a>
-        </div>
-      </header>
+      <MenuPageHeader isGelAl={isGelAl} />
 
       <main>
-        <MenuClient categories={categories} />
+        <MenuClient categories={categories} variant={isGelAl ? "gel-al" : "full"} />
       </main>
 
-      <footer className="border-t border-white/10 py-6 text-center text-xs text-muted">
-        {SITE_NAME} © 2026 - All Rights Reserved
-      </footer>
+      <MenuPageFooter />
 
       <FloatingWhatsApp />
     </>

@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLocale } from "@/context/LocaleContext";
 import { GALLERY_MEDIA } from "@/data/gallery";
 import SectionHeading from "./ui/SectionHeading";
 import MotionReveal from "./ui/MotionReveal";
 import Lightbox from "./ui/Lightbox";
+import PremiumHorizontalScroll, {
+  premiumScrollCardClass,
+} from "./ui/PremiumHorizontalScroll";
 
 function PlayIcon({ className }: { className?: string }) {
   return (
@@ -30,61 +34,69 @@ function ExpandIcon({ className }: { className?: string }) {
   );
 }
 
-/** Masonry: her 3. öğe biraz daha uzun — mobil 2 sütun, desktop 4 sütun */
-function masonryAspect(index: number): string {
-  return index % 3 === 0 ? "aspect-[3/4]" : "aspect-square";
-}
-
 export default function GallerySection() {
+  const { t, galleryAlts } = useLocale();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="section-padding" aria-label="Looptan Kareler">
+    <section id="gallery" className="section-padding" aria-label={t.gallery.aria}>
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Sosyal Kanıt"
-          title="Looptan Kareler"
-          subtitle="Canlı müzik geceleri, imza kokteyller ve Loop atmosferinden seçilmiş anlar."
+          eyebrow={t.gallery.eyebrow}
+          title={t.gallery.title}
+          subtitle={t.gallery.subtitle}
         />
-
-        <MotionReveal className="mt-12" delay={0.1}>
-          <div className="columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4">
-            {GALLERY_MEDIA.map((media, index) => {
-              const thumb = media.type === "video" ? media.poster : media.src;
-              return (
-                <button
-                  key={media.type === "video" ? media.src : thumb}
-                  type="button"
-                  aria-label={`Büyüt: ${media.alt}`}
-                  onClick={() => setOpenIndex(index)}
-                  className={`group relative mb-3 w-full break-inside-avoid overflow-hidden rounded-lg border border-white/10 transition-[border-color,transform] duration-300 hover:border-amber/50 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2 focus-visible:ring-offset-night ${masonryAspect(index)}`}
-                >
-                  <Image
-                    src={thumb}
-                    alt={media.alt}
-                    fill
-                    loading="lazy"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-
-                  <span className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/20 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
-
-                  <span className="absolute inset-0 flex items-center justify-center bg-amber/0 transition-colors duration-300 group-hover:bg-amber/10">
-                    {media.type === "video" ? (
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-night/70 text-amber backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                        <PlayIcon className="ml-0.5 h-6 w-6" />
-                      </span>
-                    ) : (
-                      <ExpandIcon className="h-7 w-7 text-amber opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    )}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </MotionReveal>
       </div>
+
+      <MotionReveal className="mt-12" delay={0.1}>
+        <PremiumHorizontalScroll
+          ariaLabel={t.gallery.scrollAria}
+          scrollHint={t.common.scrollHint}
+        >
+          {GALLERY_MEDIA.map((media, index) => {
+            const thumb = media.type === "video" ? media.poster : media.src;
+            const alt = galleryAlts[index] ?? media.alt;
+            return (
+              <button
+                key={media.type === "video" ? media.src : thumb}
+                type="button"
+                role="listitem"
+                data-scroll-item
+                aria-label={`${t.common.expand}: ${alt}`}
+                onClick={() => setOpenIndex(index)}
+                className={`${premiumScrollCardClass} aspect-[3/4] w-[min(72vw,20rem)] sm:w-72 md:w-80`}
+              >
+                <Image
+                  src={thumb}
+                  alt={alt}
+                  fill
+                  loading="lazy"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  sizes="320px"
+                />
+
+                <span className="absolute inset-0 bg-gradient-to-t from-night/90 via-night/20 to-night/5 opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <span className="absolute bottom-0 left-0 right-0 p-4 text-left opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 translate-y-1">
+                  <span className="line-clamp-2 text-[11px] font-medium uppercase tracking-wide text-ink/90">
+                    {alt}
+                  </span>
+                </span>
+
+                <span className="absolute inset-0 flex items-center justify-center bg-amber/0 transition-colors duration-500 group-hover:bg-amber/[0.04]">
+                  {media.type === "video" ? (
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-amber/30 bg-night/75 text-amber backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
+                      <PlayIcon className="ml-0.5 h-6 w-6" />
+                    </span>
+                  ) : (
+                    <ExpandIcon className="h-7 w-7 text-amber opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  )}
+                </span>
+              </button>
+            );
+          })}
+        </PremiumHorizontalScroll>
+      </MotionReveal>
 
       <Lightbox
         items={GALLERY_MEDIA}

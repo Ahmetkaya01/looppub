@@ -1,30 +1,8 @@
-import Image from "next/image";
-import { CONTACT } from "@/lib/constants";
-import SectionHeading from "./ui/SectionHeading";
-import MotionReveal from "./ui/MotionReveal";
+"use client";
 
-const FEED_IMAGES = [
-  {
-    src: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80",
-    alt: "Neon ışıklı imza kokteyl",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80",
-    alt: "Taze doldurulmuş bira bardağı",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80",
-    alt: "Loop Pub bar atmosferi",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
-    alt: "Bar tezgahında kokteyl hazırlığı",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&q=80",
-    alt: "Renkli kokteyl sunumu",
-  },
-];
+import { CONTACT } from "@/lib/constants";
+import { useLocale } from "@/context/LocaleContext";
+import MotionReveal from "./ui/MotionReveal";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -38,43 +16,39 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 export default function InstagramFeed() {
+  const { t } = useLocale();
+
   return (
     <section
       id="instagram"
       className="section-padding bg-surface"
-      aria-label="Instagram"
+      aria-label={t.instagram.aria}
     >
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Sosyal Medya"
-          title={`Bizi Takip Edin ${CONTACT.instagramHandle}`}
-          subtitle="Gecenin en iyi anları, yeni kokteyller ve etkinlik duyuruları Instagram'da."
-        />
+      <div className="mx-auto max-w-4xl text-center">
+        <MotionReveal delay={0.05}>
+          <p className="eyebrow">{t.instagram.eyebrow}</p>
+        </MotionReveal>
 
-        <MotionReveal className="mt-12" delay={0.1}>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
-            {FEED_IMAGES.map((img) => (
-              <a
-                key={img.src}
-                href={CONTACT.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Instagram'da gör: ${img.alt}`}
-                className="group relative aspect-square overflow-hidden rounded-md"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 20vw"
-                />
-                <span className="absolute inset-0 flex items-center justify-center bg-night/0 transition-colors duration-300 group-hover:bg-night/60">
-                  <InstagramIcon className="h-8 w-8 text-amber opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </span>
-              </a>
-            ))}
-          </div>
+        <MotionReveal className="mt-8" delay={0.12}>
+          <blockquote className="mx-auto max-w-2xl border-y border-amber/20 py-10">
+            <p className="font-display text-2xl font-bold uppercase leading-snug text-ink md:text-4xl">
+              {t.instagram.sloganLine1}
+              <span className="mt-2 block text-amber">{t.instagram.sloganLine2}</span>
+            </p>
+            <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
+              {t.instagram.body}
+            </p>
+          </blockquote>
+
+          <a
+            href={CONTACT.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex min-h-12 items-center justify-center gap-3 rounded-sm bg-amber px-10 text-sm font-bold uppercase tracking-cta text-night transition-colors hover:bg-amber-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+          >
+            <InstagramIcon className="h-5 w-5" />
+            {t.instagram.follow}
+          </a>
         </MotionReveal>
       </div>
     </section>

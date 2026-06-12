@@ -84,6 +84,7 @@ export default function Lightbox({
                   loop
                   playsInline
                   controls
+                  preload="none"
                 />
               ) : (
                 <Image

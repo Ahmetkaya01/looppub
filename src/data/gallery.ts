@@ -2,56 +2,28 @@ export type GalleryMedia =
   | { type: "image"; src: string; alt: string }
   | { type: "video"; src: string; poster: string; alt: string };
 
-const u = (id: string, w = 800) =>
-  `https://images.unsplash.com/${id}?w=${w}&q=80`;
+const g = (n: number, alt: string): GalleryMedia => ({
+  type: "image",
+  src: `/gallery/loop-${String(n).padStart(2, "0")}.png`,
+  alt,
+});
 
-/** Galeri içeriği — kokteyl, bira ve bar sahneleri ağırlıklı */
+/** Looptan Kareler — gerçek etkinlik ve gece hayatı fotoğrafları */
 export const GALLERY_MEDIA: GalleryMedia[] = [
-  {
-    type: "video",
-    src: "https://assets.mixkit.co/videos/4295/4295-720.mp4",
-    poster: u("photo-1514362545857-3bc16c4c7d1b"),
-    alt: "Barda kokteyl hazırlayan bartender — video",
-  },
-  {
-    type: "image",
-    src: u("photo-1551024709-8f23befc6f87"),
-    alt: "Neon ışıklı imza kokteyl",
-  },
-  {
-    type: "image",
-    src: u("photo-1572116469696-31de0f17cc34"),
-    alt: "Musluktan taze doldurulmuş bira",
-  },
-  {
-    type: "image",
-    src: u("photo-1560512823-829485b8bf24"),
-    alt: "Pembe tonlu özel kokteyl sunumu",
-  },
-  {
-    type: "video",
-    src: "https://assets.mixkit.co/videos/790/790-720.mp4",
-    poster: u("photo-1574096079513-d8259312b785"),
-    alt: "Shot hazırlayan bartender — video",
-  },
-  {
-    type: "image",
-    src: u("photo-1551538827-9c037cb4f32a"),
-    alt: "Taze naneli mojito",
-  },
-  {
-    type: "image",
-    src: u("photo-1470337458703-46ad1756a187"),
-    alt: "Bar tezgahında kokteyl hazırlığı",
-  },
-  {
-    type: "image",
-    src: u("photo-1543007630-9710e4a00a20"),
-    alt: "Gece kulübü ışıkları ve parti atmosferi",
-  },
+  g(1, "Loop Pub Tokat — canlı parti ve gece hayatı atmosferi"),
+  g(2, "Loop Pub Tokat'ta yılbaşı kutlaması — canlı müzik ve kalabalık"),
+  g(3, "Loop Pub Tokat sahnesinde canlı müzik performansı"),
+  g(4, "Tokat gece hayatı — Loop Pub dans pistinde enerji dolu anlar"),
+  g(5, "Loop Pub Tokat'ta parti gecesi — eğlence dolu atmosfer"),
+  g(6, "Loop Pub Tokat — arkadaşlarla premium pub kutlaması"),
+  g(7, "Loop Pub Tokat'ta canlı müzik gecesi performansı"),
+  g(8, "Loop Pub Tokat yılbaşı partisi — dans ve kutlama"),
+  g(9, "Loop Pub Tokat — dans ve parti ışıkları"),
+  g(10, "Tokat gece hayatından Loop Pub kareleri"),
+  g(11, "Loop Pub Tokat'ta özel parti gecesi"),
+  g(12, "Loop Pub Tokat — canlı müzik ve kutlama anları"),
 ];
 
 export function getHighResSrc(media: GalleryMedia): string {
-  if (media.type === "video") return media.src;
-  return media.src.replace(/w=\d+/, "w=1600").replace(/q=\d+/, "q=90");
+  return media.src;
 }

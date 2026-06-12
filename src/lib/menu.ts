@@ -78,8 +78,14 @@ function withDescription(product: MenuProduct): MenuProduct {
   return overlay ? { ...product, description: overlay } : product;
 }
 
-export function getMenuCategories(): MenuCategory[] {
-  const categories = menuData.categories as MenuCategory[];
+/** Gel-Al paket serviste 250 TL sabit fiyatlı kokteyl kategorileri */
+export const GEL_AL_COCKTAIL_CATEGORY_IDS = [20, 12, 21] as const;
+
+export const GEL_AL_COCKTAIL_PRICE = "250,00";
+
+export const GEL_AL_MENU_HREF = "/menu?gel-al=1";
+
+function sortAndEnrichCategories(categories: MenuCategory[]): MenuCategory[] {
   return [...categories]
     .sort(
       (a, b) =>
@@ -94,6 +100,38 @@ export function getMenuCategories(): MenuCategory[] {
         products: sub.products.map(withDescription),
       })),
     }));
+}
+
+function applyGelAlCocktailPricing(product: MenuProduct): MenuProduct {
+  return {
+    ...product,
+    units: product.units.map((unit) => ({
+      ...unit,
+      price: GEL_AL_COCKTAIL_PRICE,
+    })),
+  };
+}
+
+export function getMenuCategories(): MenuCategory[] {
+  const categories = menuData.categories as MenuCategory[];
+  return sortAndEnrichCategories(categories);
+}
+
+/** Gel-Al: yalnızca kokteyl kategorileri, tüm kokteyller 250 TL */
+export function getGelAlMenuCategories(): MenuCategory[] {
+  const gelAlIds = new Set<number>(GEL_AL_COCKTAIL_CATEGORY_IDS);
+  return sortAndEnrichCategories(
+    (menuData.categories as MenuCategory[]).filter((c) =>
+      gelAlIds.has(c.category.id),
+    ),
+  ).map((category) => ({
+    ...category,
+    products: category.products.map(applyGelAlCocktailPricing),
+    subcategories: category.subcategories?.map((sub) => ({
+      ...sub,
+      products: sub.products.map(applyGelAlCocktailPricing),
+    })),
+  }));
 }
 
 export function hasRealImage(product: MenuProduct): boolean {

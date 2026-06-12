@@ -1,15 +1,23 @@
-import { CONTACT, SITE_NAME } from "@/lib/constants";
+"use client";
+
+import { CONTACT, SEO_LOCATION, SITE_NAME } from "@/lib/constants";
+import { useLocale } from "@/context/LocaleContext";
 
 export default function Footer() {
+  const { t } = useLocale();
+
   return (
     <footer
       className="border-t border-white/10 bg-surface"
-      aria-label="Site alt bilgisi"
+      aria-label={t.footer.aria}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 py-14 md:flex-row md:items-start md:justify-between md:px-10">
         <div>
           <p className="font-display text-2xl font-extrabold uppercase">
             Loop <span className="text-amber">Pub &amp; Bar</span>
+          </p>
+          <p className="mt-2 text-xs font-semibold uppercase tracking-eyebrow text-amber/80">
+            {SEO_LOCATION}
           </p>
           <a
             href={CONTACT.mapsUrl}
@@ -23,7 +31,7 @@ export default function Footer() {
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-eyebrow text-muted">
-            İletişim
+            {t.footer.contact}
           </p>
           <a
             href={CONTACT.phoneTel}
@@ -35,7 +43,7 @@ export default function Footer() {
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-eyebrow text-muted">
-            Sosyal Medya
+            {t.footer.social}
           </p>
           <a
             href={CONTACT.instagramUrl}
@@ -57,7 +65,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/5 py-6 text-center text-xs text-muted">
-        {SITE_NAME} © 2026 - All Rights Reserved
+        {SITE_NAME} © 2026 — {t.footer.rights}
       </div>
     </footer>
   );

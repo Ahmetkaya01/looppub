@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useLocale } from "@/context/LocaleContext";
 import {
   flattenMenuForSearch,
   searchMenu,
@@ -13,9 +15,13 @@ import MenuSearchBar from "./MenuSearchBar";
 
 export default function MenuClient({
   categories,
+  variant = "full",
 }: {
   categories: MenuCategory[];
+  variant?: "full" | "gel-al";
 }) {
+  const { t } = useLocale();
+  const isGelAl = variant === "gel-al";
   const [activeId, setActiveId] = useState(categories[0].category.id);
   const [query, setQuery] = useState("");
   const reduced = useReducedMotion();
@@ -60,16 +66,43 @@ export default function MenuClient({
 
   return (
     <>
+      {isGelAl && (
+        <div className="border-b border-amber/20 bg-amber/10 px-4 py-4 text-center">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber">
+            {t.menuPage.gelAlEyebrow}
+          </p>
+          <p className="mt-2 font-display text-lg font-bold uppercase text-ink md:text-xl">
+            {t.menuPage.gelAlTitle}
+          </p>
+          <p className="mx-auto mt-2 max-w-md text-sm text-muted">
+            {t.menuPage.gelAlNote}
+          </p>
+          <Link
+            href="/menu"
+            className="mt-4 inline-flex text-xs font-semibold uppercase tracking-cta text-amber underline-offset-4 hover:underline"
+          >
+            {t.menuPage.gelAlFullMenu}
+          </Link>
+        </div>
+      )}
+
       <MenuSearchBar
         value={query}
         onChange={setQuery}
         resultCount={isSearching ? searchResults.length : undefined}
+        label={t.menuPage.searchLabel}
+        placeholder={
+          isGelAl ? t.menuPage.searchPlaceholderGelAl : t.menuPage.searchPlaceholder
+        }
+        clearLabel={t.menuPage.clearSearch}
+        noResultsLabel={t.menuPage.noResults}
+        resultsFoundLabel={t.menuPage.resultsFound}
       />
 
       {!isSearching && (
         <nav
           className="border-b border-white/10 bg-night px-4 py-4"
-          aria-label="Menü kategorileri"
+          aria-label={t.menuPage.categoriesAria}
         >
           <div
             className="mx-auto grid max-w-4xl grid-cols-2 gap-2 min-[420px]:grid-cols-3 md:flex md:flex-wrap md:justify-center"
@@ -107,6 +140,7 @@ export default function MenuClient({
               results={searchResults}
               query={query}
               reduced={!!reduced}
+              t={t}
             />
           ) : (
             <CategoryPanel
@@ -125,10 +159,12 @@ function SearchResults({
   results,
   query,
   reduced,
+  t,
 }: {
   results: SearchableProduct[];
   query: string;
   reduced: boolean;
+  t: ReturnType<typeof useLocale>["t"];
 }) {
   return (
     <motion.div
@@ -140,13 +176,12 @@ function SearchResults({
     >
       <h2 className="mb-5 flex items-center gap-3 font-display text-xl font-bold uppercase md:text-2xl">
         <span className="h-px w-8 bg-amber" aria-hidden />
-        Arama: &ldquo;{query.trim()}&rdquo;
+        {t.menuPage.searchTitle}: &ldquo;{query.trim()}&rdquo;
       </h2>
 
       {results.length === 0 ? (
         <p className="rounded-lg border border-white/10 bg-card p-8 text-center text-muted">
-          Eşleşen ürün bulunamadı. &ldquo;viski kadeh&rdquo;, &ldquo;mojito&rdquo; veya
-          &ldquo;bira&rdquo; gibi terimler deneyin.
+          {t.menuPage.searchEmpty}
         </p>
       ) : (
         <div className="grid gap-3 md:grid-cols-2 md:gap-4">

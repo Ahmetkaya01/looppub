@@ -1,16 +1,36 @@
-import { CONTACT, SITE_NAME, SITE_URL } from "@/lib/constants";
+import {
+  CONTACT,
+  SEO_HERO_IMAGE,
+  SEO_LOCATION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/constants";
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "BarOrPub",
+  "@type": ["BarOrPub", "NightClub"],
   name: SITE_NAME,
   url: SITE_URL,
   telephone: "+905439525682",
+  image: SEO_HERO_IMAGE,
   address: {
     "@type": "PostalAddress",
-    streetAddress: CONTACT.address,
+    streetAddress: CONTACT.streetAddress,
+    addressLocality: CONTACT.addressLocality,
+    addressRegion: CONTACT.addressRegion,
+    postalCode: CONTACT.postalCode,
     addressCountry: "TR",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: CONTACT.geo.latitude,
+    longitude: CONTACT.geo.longitude,
+  },
+  areaServed: {
+    "@type": "City",
+    name: CONTACT.addressLocality,
+  },
+  hasMap: CONTACT.mapsUrl,
   servesCuisine: ["Pub Food", "Cocktails", "Craft Beer"],
   openingHoursSpecification: [
     {
@@ -31,6 +51,7 @@ const schema = {
   sameAs: [CONTACT.instagramUrl],
   hasMenu: `${SITE_URL}/menu`,
   priceRange: "₺₺",
+  description: `${SEO_LOCATION} bölgesinde kokteyl bar, canlı müzik ve özel organizasyon hizmeti sunan premium pub.`,
 };
 
 export default function JsonLd() {

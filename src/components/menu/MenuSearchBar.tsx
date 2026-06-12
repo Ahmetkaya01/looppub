@@ -6,10 +6,20 @@ export default function MenuSearchBar({
   value,
   onChange,
   resultCount,
+  label,
+  placeholder,
+  clearLabel,
+  noResultsLabel,
+  resultsFoundLabel,
 }: {
   value: string;
   onChange: (value: string) => void;
   resultCount?: number;
+  label: string;
+  placeholder: string;
+  clearLabel: string;
+  noResultsLabel: string;
+  resultsFoundLabel: string;
 }) {
   const id = useId();
 
@@ -17,7 +27,7 @@ export default function MenuSearchBar({
     <div className="border-b border-white/10 bg-surface/50 px-4 py-4">
       <div className="mx-auto max-w-4xl">
         <label htmlFor={id} className="sr-only">
-          Menüde ara
+          {label}
         </label>
         <div className="relative">
           <svg
@@ -36,7 +46,7 @@ export default function MenuSearchBar({
             type="search"
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            placeholder="Ürün, kategori veya malzeme ara… (ör. viski kadeh, mojito, bira)"
+            placeholder={placeholder}
             autoComplete="off"
             enterKeyHint="search"
             className="w-full rounded-lg border border-white/15 bg-card py-3.5 pl-12 pr-12 font-body text-sm text-ink placeholder:text-muted/70 transition-[border-color,box-shadow] duration-200 focus:border-amber/60 focus:outline-none focus:ring-2 focus:ring-amber/30"
@@ -45,7 +55,7 @@ export default function MenuSearchBar({
             <button
               type="button"
               onClick={() => onChange("")}
-              aria-label="Aramayı temizle"
+              aria-label={clearLabel}
               className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-muted transition-colors hover:bg-white/10 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
             >
               ×
@@ -55,8 +65,8 @@ export default function MenuSearchBar({
         {value && resultCount !== undefined && (
           <p className="mt-2 text-xs text-muted" aria-live="polite">
             {resultCount === 0
-              ? "Sonuç bulunamadı — farklı bir kelime deneyin."
-              : `${resultCount} sonuç bulundu`}
+              ? noResultsLabel
+              : `${resultCount} ${resultsFoundLabel}`}
           </p>
         )}
       </div>

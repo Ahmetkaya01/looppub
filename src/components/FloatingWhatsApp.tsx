@@ -1,12 +1,16 @@
-import { CONTACT } from "@/lib/constants";
+"use client";
+
+import { useLocale } from "@/context/LocaleContext";
 
 export default function FloatingWhatsApp() {
+  const { t } = useLocale();
+
   return (
     <a
-      href={CONTACT.whatsappUrl}
+      href={t.whatsapp.reservation}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp ile rezervasyon yap"
+      aria-label={t.contact.whatsappQuick}
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-card transition-transform duration-300 hover:scale-110"
     >
       <svg
