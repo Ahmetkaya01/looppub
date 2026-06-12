@@ -1,0 +1,2671 @@
+{
+  "syncedAt": "2026-06-12T07:02:25.622Z",
+  "categories": [
+    {
+      "category": {
+        "id": 4,
+        "name": "SICAK KAHVELER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/sicak-kahveler.jpg"
+      },
+      "products": [
+        {
+          "id": 3,
+          "name": "TÜRK KAHVESİ",
+          "description": null,
+          "image": "https://static.ticimax.cloud/cdn-cgi/image/width=540,quality=99/31208/uploads/blog/cikolatali-turk-kahvesi-tarifi-b8dc.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "DİBEK KAHVESİ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/dibek.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "MENENGİÇ KAHVESİ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/menengic-kahvesi-faydalari-nelerdir.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "ESPRESSO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/espresso-kahve-blendi-nedir.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "DOUBLE ESPRESSO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/e36179a5-b210-49e1-834b-03e4dcb973d65ed399b6-cefe-4d72-b35a-3bf646f84e8c.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "ESPRESSO CON PANNA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-2.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "LATTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "CARAMEL LATTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-3.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "MOCHA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-1.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "WHİTE MOCHA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-6.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "FLAT WHİTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-7.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "name": "CHAİ TEA LATTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-8.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "AFFOGATO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-9.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "AMERICANO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-1.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "FILTRE KAHVE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-3.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "name": "MACCHIATO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-10.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 5,
+        "name": "BİTKİ ÇAYLARI",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/soft-icecekler.jpg"
+      },
+      "products": [
+        {
+          "id": 63,
+          "name": "ÇAY",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-1337773.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "130,00"
+            }
+          ]
+        },
+        {
+          "id": 64,
+          "name": "NANE LİMON",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-3932276.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "180,00"
+            }
+          ]
+        },
+        {
+          "id": 65,
+          "name": "KIŞ ÇAYI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-14.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "180,00"
+            }
+          ]
+        },
+        {
+          "id": 66,
+          "name": "IHLAMUR",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir422249.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "180,00"
+            }
+          ]
+        },
+        {
+          "id": 67,
+          "name": "YEŞİL ÇAY",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-1444197.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "180,00"
+            }
+          ]
+        },
+        {
+          "id": 68,
+          "name": "BÖĞÜRTLEN ÇAYI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images880890.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "180,00"
+            }
+          ]
+        },
+        {
+          "id": 69,
+          "name": "PAPATYA ÇAYI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-1891478.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "180,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 6,
+        "name": "SOĞUK İÇECEKLER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/soguk-icecekler.jpg"
+      },
+      "products": [
+        {
+          "id": 70,
+          "name": "SU",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/su-buyuk-cam-sise.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "50,00"
+            }
+          ]
+        },
+        {
+          "id": 71,
+          "name": "MADEN SUYU",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-3629856.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "150,00"
+            }
+          ]
+        },
+        {
+          "id": 72,
+          "name": "MEYVELİ SODA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-499837.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "170,00"
+            }
+          ]
+        },
+        {
+          "id": 73,
+          "name": "KOLA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-263481.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 74,
+          "name": "FANTA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-3672348.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 75,
+          "name": "SPRİTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-5355881.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 76,
+          "name": "RED BULL",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-7991642.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 77,
+          "name": "COOL LİME",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-8151288.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 78,
+          "name": "BERRY HİBİSCUS",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-9354460.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 79,
+          "name": "MOJİTO ( ALKOLSÜZ )",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-4756050.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 80,
+          "name": "LİMONATA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-6717239.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 215,
+          "name": "REDBULL KÜÇÜK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/08110030-a4b666-1650x1650.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "140,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 7,
+        "name": "SOĞUK KAHVELER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/soguk-kahvler.jpg"
+      },
+      "products": [
+        {
+          "id": 19,
+          "name": "ICE LATTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-4.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "ICE CARAMEL LATTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-6.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "name": "ICE MOCHA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/e36179a5-b210-49e1-834b-03e4dcb973d65ed399b6-cefe-4d72-b35a-3bf646f84e8c179480.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "name": "ICE WHITE MOCHA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-11.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "ICE AMERICANO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-8.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "ICE FILTRE KAHVE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/filtre.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "ICE MACCHIATO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 8,
+        "name": "FRAPPE",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/frappe.jpg"
+      },
+      "products": [
+        {
+          "id": 26,
+          "name": "CARAMEL FRAPPE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-1443919.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "ÇİKOLATALI FRAPPE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir434603.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "name": "ÇİLEKLİ FRAPPE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-2.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "name": "OREO FRAPPE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-3427452.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "name": "VANİLYA FRAPPE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-2683995.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 9,
+        "name": "MİLKSHAKE",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/milkshake777617.jpg"
+      },
+      "products": [
+        {
+          "id": 31,
+          "name": "ÇİKOLATALI MİLKSHAKE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-4.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "VANİLYALI MİLKSHAKE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-5.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "ÇİLEKLİ MİLKSHAKE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-6581608.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "name": "ORMAN MEYVELİ MİLKSHAKE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-7.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 35,
+          "name": "MANGOLU MİLKSHAKE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-8147738.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 36,
+          "name": "OREOLU MİLKSHAKE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-9.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 10,
+        "name": "SMOOTHİE",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/smoothie.jpg"
+      },
+      "products": [
+        {
+          "id": 37,
+          "name": "ÇİLEKLİ SMOOTHİE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-3334932.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 38,
+          "name": "MUZLU SMOOTHİE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-4294350.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "name": "ORMAN MEYVELİ SMOOTHİE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-12.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 40,
+          "name": "KİVİLİ SMOOTHİE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-5.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "name": "MANGOLU SMOOTHİE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-15.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 11,
+        "name": "FROZEN",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/froze.jpg"
+      },
+      "products": [
+        {
+          "id": 42,
+          "name": "YEŞİL ELMALI FROZEN",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-6836603.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 43,
+          "name": "ÇİLEKLİ FROZEN",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-8549797.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 44,
+          "name": "KİVİLİ FROZEN",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-17.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 45,
+          "name": "MANGOLU FROZEN",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-940274.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 46,
+          "name": "ORMAN MEYVELİ FROZEN",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-18.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 12,
+        "name": "KOKTEYLLER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-10708048.jpg"
+      },
+      "products": [
+        {
+          "id": 142,
+          "name": "COSMOPOLITAN",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-37.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 203,
+          "name": "WHİSKEY SOUR",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/sour.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 150,
+          "name": "LYNCHBURG LEMONADE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-45.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 149,
+          "name": "PORN STAR MARTINI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-44.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 148,
+          "name": "NEW YORK SOUR",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-43.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 147,
+          "name": "FRENCH MARTINI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-42.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 146,
+          "name": "ESPRESSO MARTINI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-41.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 145,
+          "name": "DAIQUIRI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-40.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 144,
+          "name": "CLOVER CLUB",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-38.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 143,
+          "name": "CAIPIRINHA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-29.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 47,
+          "name": "LONG ISLAND",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-19.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "500,00"
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "name": "SEX ON THE BEACH",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-12910771.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "name": "APEROL SPRITZ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-11.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "name": "MOJITO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-6671684.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 56,
+          "name": "CUBA LIBRE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-57637.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "name": "MARGARITA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-1720984.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 51,
+          "name": "NEGRONI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-2329548.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "420,00"
+            }
+          ]
+        },
+        {
+          "id": 50,
+          "name": "VODKA MARTINI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-1366614.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 49,
+          "name": "GIN MARTINI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir946144.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 48,
+          "name": "PINA COLADA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-36.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 20,
+        "name": "LOOP İMZA KOKTEYLLER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-21169355.jpg"
+      },
+      "products": [
+        {
+          "id": 247,
+          "name": "LOOP HUB",
+          "description": null,
+          "image": "https://170.limonpos.com.tr/storage/2026/03/adsiz-tasarim-page-0001-1.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 151,
+          "name": "AFRODİT",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 152,
+          "name": "WHISKEY PARADISE",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 153,
+          "name": "SEZAR",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 154,
+          "name": "LOOP SOUR",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 155,
+          "name": "THALİA",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 21,
+        "name": "ALKOLSÜZ KOKTEYLLER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-823767.jpg"
+      },
+      "products": [
+        {
+          "id": 167,
+          "name": "VIRGIN MOJITO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-9611074.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 168,
+          "name": "VIRGIN PINA COLADA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-10977494.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 169,
+          "name": "LOOP TİME",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-11128987.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 170,
+          "name": "RAİNBOW KOKTEYL",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-12135555.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 171,
+          "name": "BLUE PARADİSE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-13360519.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 172,
+          "name": "RED DEVİL",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-14633725.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 22,
+        "name": "İKİLİ KARIŞIM",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-2704747.jpg"
+      },
+      "products": [
+        {
+          "id": 224,
+          "name": "MALİBU KOLA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/malibu-cola-1200-3.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 233,
+          "name": "CİN MEYVE SUYU",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/fog-cutter-400x400.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 232,
+          "name": "VİSKİ MEYVESUYU",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/viski-kokteyl.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 231,
+          "name": "VOTKA MEYVESUYU",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/palace-votka-kokteyli.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 230,
+          "name": "VOTKA TONİK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/images-6335104.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 229,
+          "name": "CİN TONİK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/gin-and-tonic-with-ingredients.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 228,
+          "name": "JAGER FANTA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/images-5697502.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 227,
+          "name": "VOTKA FANTA (ORANGE)",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/ec2f5e2efe3546aea86a1289956e0c44f01b3fee-trojka-vodka-fanta.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 226,
+          "name": "CİN SPRİTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/ozel-69-cin-kokteyli.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 225,
+          "name": "VOTKA SPRİTE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/vtka826882.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 173,
+          "name": "CİN TONİK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-15297817.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 223,
+          "name": "JAGER KOLA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/c0fefd16491113562ac9e190d70.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 222,
+          "name": "MALİBU SUNRİSE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/images-3517087.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 221,
+          "name": "TEKİLA SUNRİSE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/lucca-beach-tekila-sunrise.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 178,
+          "name": "JAGER ENERJİ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-20256041.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 177,
+          "name": "VODKA VİŞNE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-19952612.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 176,
+          "name": "VODKA ENERJİ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-18497727.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 175,
+          "name": "VİSKİ ENERJİ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-17674045.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 174,
+          "name": "VİSKİ KOLA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-16977982.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 13,
+        "name": "BİRALAR",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-10818637.jpg"
+      },
+      "products": [
+        {
+          "id": 82,
+          "name": "EFES ÖZEL SERİ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-8507449.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "name": "EFES MALT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-11393801.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 88,
+          "name": "BELFAST",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-10809673.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 83,
+          "name": "BOMONTI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/bira-bomonti.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 90,
+          "name": "CORONA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-12614823.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        },
+        {
+          "id": 159,
+          "name": "CARLSBERG",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-1426855.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        },
+        {
+          "id": 162,
+          "name": "TUBORG GOLD",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-4606998.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 236,
+          "name": "BECKS",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/12/images-1719680.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        },
+        {
+          "id": 235,
+          "name": "TUBORG SERÇE BİRA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/12/bc75a0e5-1e52-41a5-be37-5c7cb8c84adb.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "240,00"
+            }
+          ]
+        },
+        {
+          "id": 234,
+          "name": "EFES SERÇE BİRA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/12/images971502.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 217,
+          "name": "MEKSİKA BİRA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/desperados-hollanda.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "370,00"
+            }
+          ]
+        },
+        {
+          "id": 216,
+          "name": "EFES GLUTENSİZ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/images36846.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "270,00"
+            }
+          ]
+        },
+        {
+          "id": 213,
+          "name": "HEİNEKEN BİRA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/heineken.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        },
+        {
+          "id": 165,
+          "name": "CARLSBERG LUNA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images895148.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        },
+        {
+          "id": 164,
+          "name": "TUBORG FİLTRESİZ",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-6473988.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 163,
+          "name": "TUBORG AMBER",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-5613451.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 161,
+          "name": "BLANC",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-3453938.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 160,
+          "name": "TUBORG ICE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-280019.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 158,
+          "name": "FREDERIK",
+          "description": "INDIA PALE ALE, WHEAT IPA, MARZEN LAGER, LOCAL",
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir7943.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 157,
+          "name": "SOL",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-47.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 156,
+          "name": "DESPERADOS",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-46.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "260,00"
+            }
+          ]
+        },
+        {
+          "id": 89,
+          "name": "BUD",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-11989710.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        },
+        {
+          "id": 84,
+          "name": "MILLER",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-12.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "290,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 14,
+        "name": "VİSKİLER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-13.jpg"
+      },
+      "products": [
+        {
+          "id": 92,
+          "name": "CHIVAS REGAL 100 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-15903623.jpg",
+          "units": [
+            {
+              "label": "100 ML",
+              "price": "5.500,00"
+            }
+          ]
+        },
+        {
+          "id": 93,
+          "name": "CHIVAS REGAL 70 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-15903623.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "4.800,00"
+            }
+          ]
+        },
+        {
+          "id": 94,
+          "name": "CHIVAS REGAL 50 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-15903623.jpg",
+          "units": [
+            {
+              "label": "50 ML",
+              "price": "4.500,00"
+            }
+          ]
+        },
+        {
+          "id": 95,
+          "name": "CHIVAS REGAL 35 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-15903623.jpg",
+          "units": [
+            {
+              "label": "35ML",
+              "price": "4.100,00"
+            }
+          ]
+        },
+        {
+          "id": 96,
+          "name": "JACK DANIELS 100 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-14.jpg",
+          "units": [
+            {
+              "label": "100ML",
+              "price": "5.500,00"
+            }
+          ]
+        },
+        {
+          "id": 97,
+          "name": "JACK DANIELS 70 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-14.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "4.800,00"
+            }
+          ]
+        },
+        {
+          "id": 98,
+          "name": "JACK DANIELS 50 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-14.jpg",
+          "units": [
+            {
+              "label": "50 ML",
+              "price": "4.500,00"
+            }
+          ]
+        },
+        {
+          "id": 99,
+          "name": "JACK DANIELS 35 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-14.jpg",
+          "units": [
+            {
+              "label": "35 ML",
+              "price": "4.100,00"
+            }
+          ]
+        },
+        {
+          "id": 100,
+          "name": "KADEH 4 CL",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-17267366.jpg",
+          "units": [
+            {
+              "label": "KADEH",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 101,
+          "name": "DOUBLE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-17267366.jpg",
+          "units": [
+            {
+              "label": "DOUBLE",
+              "price": "600,00"
+            }
+          ]
+        },
+        {
+          "id": 205,
+          "name": "KONYAK TEK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/konyak.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 206,
+          "name": "KONYAK DOUBLE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/konyak.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "600,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 15,
+        "name": "RAKILAR",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-15.jpg"
+      },
+      "products": [
+        {
+          "id": 102,
+          "name": "BEYLERBEYİ RAKI TEK 4 CL",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-16.jpg",
+          "units": [
+            {
+              "label": "KADEH",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "BEYLERBEYİ RAKI DOUBLE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-16.jpg",
+          "units": [
+            {
+              "label": "KADEH",
+              "price": "600,00"
+            }
+          ]
+        },
+        {
+          "id": 104,
+          "name": "EFE GOLD TEK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-16.jpg",
+          "units": [
+            {
+              "label": "KADEH",
+              "price": "400,00"
+            }
+          ]
+        },
+        {
+          "id": 105,
+          "name": "EFE GOLD DOUBLE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-16.jpg",
+          "units": [
+            {
+              "label": "KADEH",
+              "price": "600,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 16,
+        "name": "VOTKALAR & TEKİLA & CİN",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-35.jpg"
+      },
+      "products": [
+        {
+          "id": 107,
+          "name": "ABSOLUT VODKA",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-1886932.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "4.400,00"
+            },
+            {
+              "label": "50 ML",
+              "price": "3.800,00"
+            },
+            {
+              "label": "35 ML",
+              "price": "3.200,00"
+            },
+            {
+              "label": "100 ML",
+              "price": "4.900,00"
+            }
+          ]
+        },
+        {
+          "id": 112,
+          "name": "SMIRNOFF 100 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-18.jpg",
+          "units": [
+            {
+              "label": "100 ML",
+              "price": "4.900,00"
+            }
+          ]
+        },
+        {
+          "id": 116,
+          "name": "OLMECA TEKİLA 70 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-19281077.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "4.300,00"
+            }
+          ]
+        },
+        {
+          "id": 141,
+          "name": "GORDON",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-28.jpg",
+          "units": [
+            {
+              "label": "100 ML",
+              "price": "4.200,00"
+            }
+          ]
+        },
+        {
+          "id": 194,
+          "name": "KADEH",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-32894828.jpg",
+          "units": [
+            {
+              "label": "KADEH",
+              "price": "399,97"
+            }
+          ]
+        },
+        {
+          "id": 195,
+          "name": "DOUBLE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-33777317.jpg",
+          "units": [
+            {
+              "label": "DOUBLE",
+              "price": "600,00"
+            }
+          ]
+        },
+        {
+          "id": 204,
+          "name": "OLMECA TEKİLA 100 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-19281077.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "4.900,00"
+            }
+          ]
+        },
+        {
+          "id": 219,
+          "name": "OLMECA TEKİLA 35 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/images-1868618.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "3.500,00"
+            }
+          ]
+        },
+        {
+          "id": 220,
+          "name": "OLMECA TEKİLA 50 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/images-2166106.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "3.900,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 17,
+        "name": "ŞARAPLAR",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-19.jpg"
+      },
+      "products": [
+        {
+          "id": 120,
+          "name": "MAHLEP 50 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-20.jpg",
+          "units": [
+            {
+              "label": "50 ML",
+              "price": "2.600,00"
+            },
+            {
+              "label": "KADEH",
+              "price": "550,00"
+            }
+          ]
+        },
+        {
+          "id": 121,
+          "name": "DİREN KALECİK 75 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-20.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "2.200,00"
+            },
+            {
+              "label": "KADEH",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 122,
+          "name": "DİREN SUNGURLU BEYAZ 70 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-21.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "2.200,00"
+            },
+            {
+              "label": "KADEH",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 123,
+          "name": "DİREN VADİ ROSE 70 ML",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-21.jpg",
+          "units": [
+            {
+              "label": "70 ML",
+              "price": "2.200,00"
+            },
+            {
+              "label": "KADEH",
+              "price": "450,00"
+            }
+          ]
+        },
+        {
+          "id": 214,
+          "name": "DİĞER ŞARAPLAR",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/yiyecek-ve-icecek-red-wine-kanvas-tablo.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "350,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 23,
+        "name": "TOSTLAR",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-22905769.jpg"
+      },
+      "products": [
+        {
+          "id": 180,
+          "name": "KAŞARLI TOST",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-6106794.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "230,00"
+            }
+          ]
+        },
+        {
+          "id": 181,
+          "name": "KARIŞIK TOST",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-7193949.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 182,
+          "name": "SUCUKLU TOST",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-3811704.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "240,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 24,
+        "name": "MAKARNALAR",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-23257772.jpg"
+      },
+      "products": [
+        {
+          "id": 183,
+          "name": "FETTUCCİNE ALFREDO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-25595345.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 184,
+          "name": "PENNE PESTO",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-26928306.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 185,
+          "name": "KÖRİLİ PENNE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-27552996.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 186,
+          "name": "DAĞ KEKİKLİ PENNE",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-9896685.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 187,
+          "name": "MANTI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-28338976.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "280,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 25,
+        "name": "ATIŞTIRMALIK SEPETİ",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-24516263.jpg"
+      },
+      "products": [
+        {
+          "id": 188,
+          "name": "KARIŞIK SEPET",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-10240610.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "500,00"
+            }
+          ]
+        },
+        {
+          "id": 189,
+          "name": "PATATES KIZARTMASI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-2938043.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 27,
+        "name": "SHOT'LAR",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/shotlar.jpg"
+      },
+      "products": [
+        {
+          "id": 196,
+          "name": "TEKİLA SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/tekila.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 197,
+          "name": "VOTKA SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/vtka.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 198,
+          "name": "GİN SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/gin.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 199,
+          "name": "ROM SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/rom.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 200,
+          "name": "VİSKİ SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/whiskyshot.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 201,
+          "name": "JAGER SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/jager.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 202,
+          "name": "KONYAK SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/whatsapp-gorsel-2025-09-28-saat-215233-1e9be97b.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 237,
+          "name": "JAGER ORENGE SHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/12/jagermeister-orange.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        },
+        {
+          "id": 238,
+          "name": "JAGER COLD BREWSHOT",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/12/jm-cold-brew-coffee-dach-int-1l-key-visual-portrait.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 29,
+        "name": "KURUYEMİŞ CİPS JELİBON",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/10/kuruyemis-tabagi-modelleri-1.jpg"
+      },
+      "products": [
+        {
+          "id": 166,
+          "name": "KURUYEMİŞ TABAĞI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-1719606.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 218,
+          "name": "TUZLU FISTIK",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/10/big-tuzlu-fistik-kg368.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "150,00"
+            }
+          ]
+        },
+        {
+          "id": 241,
+          "name": "SARHOŞ LEBLEBİ",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "120,00"
+            }
+          ]
+        },
+        {
+          "id": 242,
+          "name": "SARHOŞ LEBLEBİ",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "120,00"
+            }
+          ]
+        },
+        {
+          "id": 243,
+          "name": "SOSLU CİPS",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "150,00"
+            }
+          ]
+        },
+        {
+          "id": 244,
+          "name": "JELİBON",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/12/images859607.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "200,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 30,
+        "name": "MENÜLER",
+        "preview_url": ""
+      },
+      "products": [
+        {
+          "id": 248,
+          "name": "ÖZEL SERİ MENÜ",
+          "description": null,
+          "image": "https://170.limonpos.com.tr/storage/2026/04/whatsapp-image-2026-04-20-at-204435.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "1.250,00"
+            }
+          ]
+        },
+        {
+          "id": 249,
+          "name": "TEKİLA MENÜ",
+          "description": null,
+          "image": "https://170.limonpos.com.tr/storage/2026/04/whatsapp-image-2026-04-20-at-205235.jpeg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "900,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 26,
+        "name": "MEZELER",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/images-544355.jpg"
+      },
+      "products": [
+        {
+          "id": 191,
+          "name": "PEYNİR TABAĞI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-11435464.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "300,00"
+            }
+          ]
+        },
+        {
+          "id": 192,
+          "name": "MEYVE TABAĞI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/images-12142649.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        },
+        {
+          "id": 193,
+          "name": "HAVUÇ SALATALIK TABAĞI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-31.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "150,00"
+            }
+          ]
+        },
+        {
+          "id": 239,
+          "name": "SALATALIK TURŞU",
+          "description": null,
+          "image": "https://limonmenu.com/store_assets/images/empty.png",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "150,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "category": {
+        "id": 19,
+        "name": "GÜNÜN TATLILARI",
+        "preview_url": "https://123.limonpos.com.tr/storage/2025/09/indir-29.jpg"
+      },
+      "products": [
+        {
+          "id": 135,
+          "name": "GÜNÜN TATLISI",
+          "description": null,
+          "image": "https://123.limonpos.com.tr/storage/2025/09/indir-30.jpg",
+          "units": [
+            {
+              "label": "Adet",
+              "price": "250,00"
+            }
+          ]
+        }
+      ],
+      "subcategories": []
+    }
+  ]
+}

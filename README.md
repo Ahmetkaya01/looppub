@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Loop Pub & Bar — Premium Web Sitesi
 
-## Getting Started
+Production-ready Next.js 15 uygulaması. GitHub + Vercel dağıtımına hazır.
 
-First, run the development server:
+## Özellikler
+
+- **Landing (`/`)** — Video hero, "A new story begins" animasyonu, parallax, cursor glow, partiküller
+- **Menü (`/menu`)** — 25 kategori / 199 ürün (Limon POS), anlık arama, viski kadeh alias desteği
+- **Üst Kat Organizasyonları** — YouTube playlist embed
+- **Looptan Kareler** — Masonry grid + lightbox
+- **SEO** — JSON-LD, sitemap, robots, Open Graph
+
+## Geliştirme
 
 ```bash
+npm install
+cp .env.example .env.local   # isteğe bağlı
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Ana sayfa: http://localhost:3000
+- Menü (QR hedefi): http://localhost:3000/menu
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Menü senkronizasyonu
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run menu:sync
+```
 
-## Learn More
+POS'tan `src/data/menu.json` güncellenir. Ürün açıklamaları `src/data/product-descriptions.ts` overlay'inde kalır (sync üzerine yazmaz).
 
-To learn more about Next.js, take a look at the following resources:
+## Vercel'e deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Repoyu GitHub'a push edin
+2. [vercel.com](https://vercel.com) → Import Project → repo seçin
+3. Framework: **Next.js** (otomatik algılanır)
+4. Environment Variables:
+   - `NEXT_PUBLIC_SITE_URL` = `https://www.looppub.live`
+   - `NEXT_PUBLIC_YOUTUBE_PLAYLIST_ID` = Loop etkinlik playlist ID'niz
+5. Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Build komutu (varsayılan): `npm run build`
 
-## Deploy on Vercel
+## GitHub'a push
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git init   # henüz yoksa
+git add .
+git commit -m "Loop Pub premium site — production ready"
+git remote add origin https://github.com/KULLANICI/loop-pub-premium.git
+git push -u origin main
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Ortam değişkenleri
+
+| Değişken | Açıklama |
+|----------|----------|
+| `NEXT_PUBLIC_SITE_URL` | Canonical URL (SEO, sitemap) |
+| `NEXT_PUBLIC_YOUTUBE_PLAYLIST_ID` | Üst Kat etkinlik YouTube playlist ID |
+
+## Menü arama
+
+`/menu` sayfasında ürün adı, kategori ve malzeme/açıklama ile anlık filtreleme. Örnek: `viski kadeh`, `mojito`, `chivas`.
+
+Viski kadehleri `VİSKİLER` kategorisinde: **KADEH 4 CL** (₺400), **DOUBLE** (₺600).
