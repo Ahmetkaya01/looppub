@@ -1,14 +1,18 @@
 import type { NextConfig } from "next";
 import path from "path";
 
-/** Project Pages URL: https://ahmetkaya01.github.io/looppub/ */
-const basePath = "/looppub";
+/** Only GitHub project Pages needs /looppub; Vercel serves from domain root. */
+const isGithubPages = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGithubPages ? "/looppub" : "";
 
 const nextConfig: NextConfig = {
-  // Static export for GitHub Pages (Vercel/Netlify credits exhausted)
   output: "export",
-  basePath,
-  assetPrefix: basePath,
+  ...(basePath
+    ? {
+        basePath,
+        assetPrefix: basePath,
+      }
+    : {}),
   trailingSlash: true,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
