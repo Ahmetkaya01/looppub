@@ -1,10 +1,18 @@
 import type { NextConfig } from "next";
 import path from "path";
 
+/** Project Pages URL: https://ahmetkaya01.github.io/looppub/ */
+const basePath = "/looppub";
+
 const nextConfig: NextConfig = {
   // Static export for GitHub Pages (Vercel/Netlify credits exhausted)
   output: "export",
+  basePath,
+  assetPrefix: basePath,
   trailingSlash: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
     remotePatterns: [

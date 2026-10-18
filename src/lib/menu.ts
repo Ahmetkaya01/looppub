@@ -1,3 +1,4 @@
+import { withBasePath } from "./base-path";
 import type { MenuConfigResponse } from "./limon-menu";
 import { getFallbackMenuConfig } from "./limon-menu";
 import { MENU_TAB_CATEGORIES } from "./menu-tabs";
@@ -56,14 +57,16 @@ export async function fetchMenuConfig(): Promise<MenuConfigResponse> {
   if (menuConfigCache) return menuConfigCache;
 
   const fromCache = await tryFetchJson<MenuConfigResponse>(
-    "/menu-cache/config.json",
+    withBasePath("/menu-cache/config.json"),
   );
   if (fromCache) {
     menuConfigCache = fromCache;
     return fromCache;
   }
 
-  const fromApi = await tryFetchJson<MenuConfigResponse>("/api/menu");
+  const fromApi = await tryFetchJson<MenuConfigResponse>(
+    withBasePath("/api/menu"),
+  );
   if (fromApi) {
     menuConfigCache = fromApi;
     return fromApi;
@@ -112,10 +115,12 @@ export async function fetchCategoryPayload(
   categoryId: number,
 ): Promise<MenuCategoryPayload | null> {
   const cached = await tryFetchJson<MenuCategoryPayload>(
-    `/menu-cache/${categoryId}.json`,
+    withBasePath(`/menu-cache/${categoryId}.json`),
   );
   if (cached) return cached;
-  return tryFetchJson<MenuCategoryPayload>(`/api/menu/${categoryId}`);
+  return tryFetchJson<MenuCategoryPayload>(
+    withBasePath(`/api/menu/${categoryId}`),
+  );
 }
 
 export async function fetchCategoryProducts(
@@ -137,12 +142,12 @@ export async function fetchTabMenu(
   tabId: import("./menu-tabs").MenuTabId,
 ): Promise<import("./menu-types").MenuTabPayload> {
   const fromCache = await tryFetchJson<import("./menu-types").MenuTabPayload>(
-    `/menu-cache/tabs/${tabId}.json`,
+    withBasePath(`/menu-cache/tabs/${tabId}.json`),
   );
   if (fromCache) return fromCache;
 
   const fromApi = await tryFetchJson<import("./menu-types").MenuTabPayload>(
-    `/api/menu/tab/${tabId}`,
+    withBasePath(`/api/menu/tab/${tabId}`),
   );
   if (fromApi) return fromApi;
 

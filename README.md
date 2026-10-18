@@ -30,23 +30,13 @@ Static export — no Vercel/Netlify required.
 
 1. Push to `main` → GitHub Actions builds and deploys Pages.
 2. Repo → **Settings → Pages** → Source: **GitHub Actions**.
-3. Custom domain: `www.looppub.live` (CNAME is in `public/CNAME`).
 
-**DNS (Squarespace / registrar):**
+**Live preview (while custom DNS settles):**  
+https://ahmetkaya01.github.io/looppub/
 
-| Type | Host | Value |
-|------|------|--------|
-| CNAME | www | `ahmetkaya01.github.io` |
-| A | @ | `185.199.108.153` |
-| A | @ | `185.199.109.153` |
-| A | @ | `185.199.110.153` |
-| A | @ | `185.199.111.153` |
-
-Remove old Vercel A records (`76.76.21.21`) if still present.
+Built with `basePath: /looppub` for project Pages. When `www.looppub.live` DNS works, add `public/CNAME` + GitHub custom domain and remove `basePath` (or keep apex redirect).
 
 Menu data is baked into `public/menu-cache/` at build time (`npm run menu:sync`).
-
-Deployed site: [www.looppub.live](https://www.looppub.live) · Pages URL: https://ahmetkaya01.github.io/looppub/
 
 ## Push to GitHub
 
