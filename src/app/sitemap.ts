@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
 
+export const dynamic = "force-static";
+
 /** Static sitemap — menu pages are discoverable via internal links; avoids build timeouts from POS API. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

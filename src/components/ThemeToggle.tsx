@@ -3,7 +3,7 @@
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { useTheme } from "@/theme/ThemeProvider";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ light = false }: { light?: boolean }) {
   const { theme, mounted, toggleTheme } = useTheme();
   const { t } = useLanguage();
   const isDark = theme === "dark";
@@ -12,18 +12,25 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] backdrop-blur-md transition-all duration-300 hover:border-gold hover:shadow-neon-gold"
+      className={`group relative flex h-10 w-10 items-center justify-center border transition-all duration-300 ${
+        light
+          ? "border-maple/35 bg-black/10 hover:border-maple"
+          : "border-[var(--border)] bg-[var(--surface)] hover:border-maroon/40"
+      }`}
       aria-label={isDark ? t.theme.switchToLight : t.theme.switchToDark}
       suppressHydrationWarning
     >
       {!mounted ? (
-        <span className="h-5 w-5 rounded-full bg-gold/30" aria-hidden />
+        <span
+          className={`h-4 w-4 rounded-full ${light ? "bg-maple/40" : "bg-maroon/20"}`}
+          aria-hidden
+        />
       ) : (
         <>
           <svg
-            className={`absolute h-5 w-5 text-gold transition-all duration-300 ${
-              isDark ? "rotate-0 scale-100 opacity-100" : "scale-0 opacity-0"
-            }`}
+            className={`absolute h-4 w-4 transition-all duration-300 ${
+              light ? "text-maple" : "text-maroon"
+            } ${isDark ? "rotate-0 scale-100 opacity-100" : "scale-0 opacity-0"}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -37,9 +44,9 @@ export default function ThemeToggle() {
             />
           </svg>
           <svg
-            className={`absolute h-5 w-5 text-amber-600 transition-all duration-300 ${
-              isDark ? "scale-0 opacity-0" : "scale-100 opacity-100"
-            }`}
+            className={`absolute h-4 w-4 transition-all duration-300 ${
+              light ? "text-maple" : "text-maroon"
+            } ${isDark ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

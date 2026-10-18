@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import ArrowButton from "./ArrowButton";
 import FadeIn from "./FadeIn";
 
-const HERO_VIDEO =
-  "https://cdn.coverr.co/videos/coverr-a-bartender-pouring-a-drink-into-a-glass-4547/1080p.mp4";
-const HERO_POSTER =
-  "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1920&q=85";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1920&q=90";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -15,62 +15,56 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24"
+      className="relative min-h-screen min-h-[100dvh] max-h-[60rem] overflow-hidden"
       aria-label={t.hero.ariaLabel}
     >
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster={HERO_POSTER}
-        aria-hidden
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src={HERO_VIDEO} type="video/mp4" />
-      </video>
+      <div className="moody-image absolute inset-0">
+        <Image
+          src={HERO_IMAGE}
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
 
       <div className="hero-overlay-scrim absolute inset-0" />
       <div className="hero-overlay-gradient absolute inset-0" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-        <FadeIn>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.4em] text-gold">
+      <div className="relative z-10 flex min-h-screen min-h-[100dvh] max-h-[60rem] flex-col justify-end px-6 pb-16 pt-28 md:px-[6%] md:pb-20 lg:pb-24">
+        <FadeIn className="max-w-3xl">
+          <p className="font-body text-xs uppercase tracking-nav text-maple-dark">
             {t.hero.eyebrow}
           </p>
 
-          <p className="hero-slogan mx-auto mt-5 max-w-3xl font-display text-2xl font-normal italic leading-snug tracking-[0.08em] sm:mt-6 sm:text-3xl md:text-4xl">
-            {t.hero.slogan}
-          </p>
-
-          <h1 className="hero-headline mt-8 font-display font-semibold sm:mt-10">
-            <span className="hero-headline-line1 block text-4xl tracking-wide sm:text-5xl md:text-6xl">
+          <h1 className="mt-6 font-display text-[2.5rem] leading-[1.1] md:text-[3.5rem] lg:text-[4rem]">
+            <span className="hero-headline-line1 block">
               {t.hero.headlineLine1}
             </span>
-            <span className="hero-headline-line2 mt-1 block text-5xl tracking-[0.06em] sm:mt-2 sm:text-7xl md:text-8xl lg:text-9xl">
+            <span className="hero-headline-line2 mt-1 block text-[3rem] md:text-[4rem] lg:text-[4.5rem]">
               {t.hero.headlineLine2}
             </span>
           </h1>
 
-          <div className="gold-divider mt-8" />
-
-          <p className="hero-subtitle mx-auto mt-8 max-w-2xl font-body text-lg leading-relaxed sm:text-xl">
+          <p className="hero-subtitle mt-6 max-w-xl font-body text-base leading-relaxed md:text-lg">
             {t.hero.subtitle}
           </p>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-            <Link href="#menu" className="btn-neon min-w-[220px]">
-              {t.hero.exploreMenu}
-            </Link>
-            <Link href="#contact" className="btn-secondary hero-btn-secondary min-w-[220px]">
-              {t.hero.reserve}
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <ArrowButton href="#menu">{t.hero.viewMenu}</ArrowButton>
+            <Link
+              href="#contact"
+              className="font-body text-sm text-maple transition-colors duration-300 hover:text-maple-dark"
+            >
+              {t.hero.reserve} →
             </Link>
           </div>
         </FadeIn>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
-        <span className="block h-12 w-px bg-gradient-to-b from-gold/80 to-transparent" />
+      <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 md:block">
+        <span className="block h-24 w-px bg-maple/50" />
       </div>
     </section>
   );

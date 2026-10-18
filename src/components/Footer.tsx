@@ -26,142 +26,121 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="border-t border-[var(--border)] bg-page transition-colors duration-500"
+      className="footer-premium border-t border-maple/10"
       aria-label={t.footer.ariaLabel}
     >
       <div className="section-padding !pb-10">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
-            <div className="text-center">
-              <p className="font-body text-xs uppercase tracking-[0.35em] text-gold">
-                {t.footer.contact}
-              </p>
-              <h2 className="section-title mt-3">{t.nav.contact}</h2>
-              <div className="gold-divider" />
+            <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
+              <div>
+                <Logo light compact />
+                <p className="mt-8 max-w-sm font-body text-sm leading-relaxed text-maple/75">
+                  {t.hero.subtitle}
+                </p>
+                <div className="mt-8 space-y-4 font-body text-sm">
+                  <div>
+                    <p className="text-xs uppercase tracking-nav text-maple/50">
+                      {t.footer.address}
+                    </p>
+                    <a
+                      href={CONTACT.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 block text-maple transition-colors hover:text-maple-dark"
+                    >
+                      {CONTACT.address}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-nav text-maple/50">
+                      {t.footer.phone}
+                    </p>
+                    {CONTACT.phone.map((tel) => (
+                      <a
+                        key={tel}
+                        href={telUrl}
+                        className="mt-1 block font-display text-lg text-maple hover:text-maple-dark"
+                      >
+                        {tel}
+                      </a>
+                    ))}
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-nav text-maple/50">
+                      {t.footer.email}
+                    </p>
+                    <a
+                      href={`mailto:${CONTACT.email}`}
+                      className="mt-1 block text-maple hover:text-maple-dark"
+                    >
+                      {CONTACT.email}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-nav text-maple/50">
+                      {t.footer.hours}
+                    </p>
+                    <p className="mt-1 text-maple">{CONTACT.hours}</p>
+                  </div>
+                </div>
+                <FooterSocial light />
+              </div>
+
+              <div>
+                <p className="eyebrow-light">{t.footer.contact}</p>
+                <h2 className="section-title-light mt-3 !text-[2rem] md:!text-[2.5rem]">
+                  {t.nav.contact}
+                </h2>
+                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                  <input
+                    id="contact-name"
+                    name="name"
+                    required
+                    autoComplete="name"
+                    placeholder={t.footer.formName}
+                    value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    className="w-full border-b border-maple/25 bg-transparent py-3 text-maple outline-none placeholder:text-maple/40 focus:border-maple"
+                  />
+                  <input
+                    id="contact-email"
+                    name="email"
+                    required
+                    type="email"
+                    autoComplete="email"
+                    placeholder={t.footer.formEmail}
+                    value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                    className="w-full border-b border-maple/25 bg-transparent py-3 text-maple outline-none placeholder:text-maple/40 focus:border-maple"
+                  />
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    required
+                    rows={4}
+                    placeholder={t.footer.formMessage}
+                    value={form.message}
+                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                    className="w-full resize-none border-b border-maple/25 bg-transparent py-3 text-maple outline-none placeholder:text-maple/40 focus:border-maple"
+                  />
+                  <button type="submit" className="btn-1806 mt-4">
+                    <span className="btn-1806-offset" aria-hidden />
+                    <span className="btn-1806-inner">{t.footer.formSubmit}</span>
+                  </button>
+                </form>
+              </div>
             </div>
           </FadeIn>
 
-          <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <FadeIn delay={80}>
-              <div className="grid gap-8 sm:grid-cols-2">
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted">
-                    {t.footer.address}
-                  </p>
-                  <a
-                    href={CONTACT.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 block font-body text-sm leading-relaxed text-ink transition-colors hover:text-gold"
-                  >
-                    {CONTACT.address}
-                  </a>
-                  <a
-                    href={CONTACT.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary mt-4 inline-flex text-xs"
-                  >
-                    {t.footer.openMaps}
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted">
-                    {t.footer.phone}
-                  </p>
-                  {CONTACT.phone.map((tel) => (
-                    <a
-                      key={tel}
-                      href={telUrl}
-                      className="mt-2 block font-display text-xl text-ink hover:text-gold"
-                    >
-                      {tel}
-                    </a>
-                  ))}
-                  <p className="mt-6 text-xs uppercase tracking-wider text-muted">
-                    {t.footer.email}
-                  </p>
-                  <a
-                    href={`mailto:${CONTACT.email}`}
-                    className="mt-2 block text-ink hover:text-gold"
-                  >
-                    {CONTACT.email}
-                  </a>
-                  <p className="mt-6 text-xs uppercase tracking-wider text-muted">
-                    {t.footer.hours}
-                  </p>
-                  <p className="mt-2 font-body text-ink">{CONTACT.hours}</p>
-                  <FooterSocial />
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={120}>
-              <form onSubmit={handleSubmit} className="glass-card p-8">
-                <div className="space-y-5">
-                  <div>
-                    <label htmlFor="contact-name" className="sr-only">
-                      {t.footer.formName}
-                    </label>
-                    <input
-                      id="contact-name"
-                      name="name"
-                      required
-                      autoComplete="name"
-                      placeholder={t.footer.formName}
-                      value={form.name}
-                      onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                      className="w-full border-b border-[var(--border)] bg-transparent py-3 text-ink outline-none focus:border-gold"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-email" className="sr-only">
-                      {t.footer.formEmail}
-                    </label>
-                    <input
-                      id="contact-email"
-                      name="email"
-                      required
-                      type="email"
-                      autoComplete="email"
-                      placeholder={t.footer.formEmail}
-                      value={form.email}
-                      onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                      className="w-full border-b border-[var(--border)] bg-transparent py-3 text-ink outline-none focus:border-gold"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-message" className="sr-only">
-                      {t.footer.formMessage}
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      required
-                      rows={4}
-                      placeholder={t.footer.formMessage}
-                      value={form.message}
-                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                      className="w-full resize-none border-b border-[var(--border)] bg-transparent py-3 text-ink outline-none focus:border-gold"
-                    />
-                  </div>
-                </div>
-                <button type="submit" className="btn-primary mt-6 w-full sm:w-auto">
-                  {t.footer.formSubmit}
-                </button>
-              </form>
-            </FadeIn>
-          </div>
-
-          <div className="mt-16 flex flex-col items-center justify-between gap-8 border-t border-[var(--border)] pt-10 md:flex-row">
-            <Logo compact />
+          <div className="mt-16 flex flex-col items-center justify-between gap-8 border-t border-maple/15 pt-10 md:flex-row">
             <nav aria-label={t.footer.footerNavAria}>
               <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-xs uppercase tracking-wider text-muted hover:text-gold"
+                      className="font-body text-xs uppercase tracking-nav text-maple/60 transition-colors hover:text-maple"
                     >
                       {link.label}
                     </Link>
@@ -171,7 +150,7 @@ export default function Footer() {
             </nav>
             <a
               href={SITE_URL}
-              className="text-sm text-gold hover:text-gold-light"
+              className="text-sm text-maple-dark hover:text-maple"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -179,10 +158,10 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className="mt-10 text-center font-display text-sm italic text-muted md:text-base">
+          <p className="mt-10 text-center font-display text-sm italic text-maple/70 md:text-base">
             {t.footer.slogan}
           </p>
-          <p className="mt-3 text-center font-body text-xs text-muted">
+          <p className="mt-3 text-center font-body text-xs text-maple/50">
             {t.footer.rightsReserved}
           </p>
         </div>

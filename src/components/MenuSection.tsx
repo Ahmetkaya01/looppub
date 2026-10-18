@@ -1,27 +1,67 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import type { MenuTabId } from "@/i18n/types";
 import {
   MENU_TAB_IDS,
   fetchMenuConfig,
-  fetchTabProducts,
+  fetchTabMenu,
+  type MenuCategoryGroup,
   type MenuConfigResponse,
-  type MenuProductWithCategory,
 } from "@/lib/menu";
+import {
+  MENU_TAB_EVENT,
+  parseMenuTabFromHash,
+} from "@/lib/menu-navigation";
 import FadeIn from "./FadeIn";
 import MenuProductCard from "./MenuProductCard";
 import MenuSkeleton from "./MenuSkeleton";
+
+type TabCache = Partial<Record<MenuTabId, MenuCategoryGroup[]>>;
 
 export default function MenuSection() {
   const { t } = useLanguage();
   const [menuConfig, setMenuConfig] = useState<MenuConfigResponse | null>(null);
   const [configError, setConfigError] = useState(false);
   const [activeTab, setActiveTab] = useState<MenuTabId>("cocktails");
-  const [products, setProducts] = useState<MenuProductWithCategory[]>([]);
+  const [groups, setGroups] = useState<MenuCategoryGroup[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const tabCacheRef = useRef<TabCache>({});
+  const loadSeqRef = useRef(0);
+
+  useEffect(() => {
+    const applyHashTab = () => {
+      const tab = parseMenuTabFromHash(window.location.hash);
+      if (tab) setActiveTab(tab);
+    };
+    applyHashTab();
+    window.addEventListener("hashchange", applyHashTab);
+    const onTabEvent = (e: Event) => {
+      const tabId = (e as CustomEvent<{ tabId: MenuTabId }>).detail?.tabId;
+      if (tabId) setActiveTab(tabId);
+    };
+    window.addEventListener(MENU_TAB_EVENT, onTabEvent);
+    return () => {
+      window.removeEventListener("hashchange", applyHashTab);
+      window.removeEventListener(MENU_TAB_EVENT, onTabEvent);
+    };
+  }, []);
+
+  const prefetchAllTabs = useCallback(async () => {
+    await Promise.all(
+      MENU_TAB_IDS.map(async (tabId) => {
+        if (tabCacheRef.current[tabId]) return;
+        try {
+          const payload = await fetchTabMenu(tabId);
+          tabCacheRef.current[tabId] = payload.groups;
+        } catch {
+          /* tab will load on demand */
+        }
+      }),
+    );
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,6 +71,7 @@ export default function MenuSection() {
         if (!cancelled) {
           setMenuConfig(config);
           setConfigError(false);
+          void prefetchAllTabs();
         }
       } catch {
         if (!cancelled) setConfigError(true);
@@ -39,25 +80,40 @@ export default function MenuSection() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [prefetchAllTabs]);
 
-  const loadTab = useCallback(
-    async (tabId: MenuTabId) => {
-      setLoading(true);
-      setError(false);
-      try {
-        const config = menuConfig ?? (await fetchMenuConfig());
-        const items = await fetchTabProducts(tabId, config);
-        setProducts(items);
-      } catch {
-        setError(true);
-        setProducts([]);
-      } finally {
+  const loadTab = useCallback(async (tabId: MenuTabId) => {
+    const seq = ++loadSeqRef.current;
+    setLoading(true);
+    setError(false);
+    setGroups([]);
+
+    const cached = tabCacheRef.current[tabId];
+    if (cached?.length) {
+      if (seq === loadSeqRef.current) {
+        setGroups(cached);
         setLoading(false);
       }
-    },
-    [menuConfig],
-  );
+      return;
+    }
+
+    try {
+      const payload = await fetchTabMenu(tabId);
+      tabCacheRef.current[tabId] = payload.groups;
+      if (seq === loadSeqRef.current) {
+        setGroups(payload.groups);
+      }
+    } catch {
+      if (seq === loadSeqRef.current) {
+        setError(true);
+        setGroups([]);
+      }
+    } finally {
+      if (seq === loadSeqRef.current) {
+        setLoading(false);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (configError) return;
@@ -72,29 +128,29 @@ export default function MenuSection() {
       )
     : MENU_TAB_IDS;
 
+  const totalProducts = groups.reduce((n, g) => n + g.products.length, 0);
+
   return (
     <section
       id="menu"
-      className="section-padding border-t border-[var(--border)] bg-section-alt transition-colors duration-500"
+      className="section-padding-large bg-section-maroon transition-colors duration-500"
       aria-label={t.menu.ariaLabel}
     >
       <div className="mx-auto max-w-7xl">
         <FadeIn>
-          <div className="text-center">
-            <p className="font-body text-xs uppercase tracking-[0.3em] text-gold">
-              {t.menu.eyebrow}
-            </p>
-            <h2 className="section-title mt-3">{t.menu.title}</h2>
-            <div className="gold-divider" />
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow-light">{t.menu.eyebrow}</p>
+            <h2 className="section-title-light mt-4">{t.menu.title}</h2>
+            <div className="mx-auto mt-7 h-px w-20 bg-maple/30" />
           </div>
         </FadeIn>
 
         {configError ? (
-          <p className="mt-10 text-center text-muted">{t.menu.error}</p>
+          <p className="mt-10 text-center text-muted-light">{t.menu.error}</p>
         ) : (
           <>
             <div
-              className="menu-tab-scroll -mx-6 mt-10 flex gap-3 overflow-x-auto px-6 pb-2 md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0"
+              className="menu-tab-scroll -mx-6 mt-12 flex flex-col gap-0 px-6 md:mx-auto md:max-w-md md:px-0"
               role="tablist"
               aria-label={t.menu.tablistAria}
             >
@@ -107,10 +163,10 @@ export default function MenuSection() {
                   aria-controls="menu-panel"
                   aria-selected={activeTab === tabId}
                   onClick={() => setActiveTab(tabId)}
-                  className={`min-h-[44px] shrink-0 snap-start rounded-md px-5 py-3 text-center font-body text-xs uppercase tracking-[0.15em] transition-all duration-300 sm:px-6 ${
+                  className={`menu-tab-link-maroon font-display text-xl md:text-2xl ${
                     activeTab === tabId
-                      ? "border border-gold bg-gold/15 text-gold shadow-neon-gold"
-                      : "glass-card !p-3 text-muted hover:text-gold"
+                      ? "menu-tab-link-maroon-active text-maple"
+                      : "text-maple/60"
                   }`}
                 >
                   {t.menu.tabs[tabId]}
@@ -128,43 +184,56 @@ export default function MenuSection() {
               {loading && (
                 <>
                   <p className="sr-only">{t.menu.loading}</p>
-                  <MenuSkeleton />
+                  <MenuSkeleton variant="maroon" />
                 </>
               )}
 
               {error && !loading && (
                 <div className="py-16 text-center">
-                  <p className="text-muted">{t.menu.error}</p>
+                  <p className="text-muted-light">{t.menu.error}</p>
                   <button
                     type="button"
                     onClick={() => loadTab(activeTab)}
-                    className="btn-primary mt-6"
+                    className="btn-1806 mt-6"
                   >
-                    {t.menu.retry}
+                    <span className="btn-1806-offset" aria-hidden />
+                    <span className="btn-1806-inner">{t.menu.retry}</span>
                   </button>
                 </div>
               )}
 
               {!loading && !error && (
-                <FadeIn>
+                <FadeIn key={activeTab}>
                   {showCocktailLinks && (
-                    <p className="mb-6 text-center text-xs text-muted">
+                    <p className="mb-6 text-center text-xs text-muted-light">
                       {t.menu.tapForDetails}
                     </p>
                   )}
-                  {products.length > 0 ? (
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                      {products.map((product) => (
-                        <MenuProductCard
-                          key={product.id}
-                          product={product}
-                          categoryId={product.categoryId}
-                          clickable={showCocktailLinks}
-                        />
+                  {totalProducts > 0 ? (
+                    <div className="space-y-12">
+                      {groups.map((group) => (
+                        <div key={group.categoryId}>
+                          {groups.length > 1 && (
+                            <h3 className="mb-5 border-b border-maple/20 pb-3 font-display text-xl text-maple-dark">
+                              {group.categoryName}
+                            </h3>
+                          )}
+                          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                            {group.products.map((product) => (
+                              <MenuProductCard
+                                key={`${group.categoryId}-${product.id}`}
+                                product={product}
+                                categoryId={group.categoryId}
+                                clickable={showCocktailLinks}
+                                variant="maroon"
+                              />
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="py-16 text-center text-muted">{t.menu.empty}</p>
+                    <p className="py-16 text-center text-muted-light">{t.menu.empty}</p>
                   )}
                 </FadeIn>
               )}

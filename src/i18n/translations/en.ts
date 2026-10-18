@@ -20,6 +20,8 @@ export const en: Translations = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     ariaMain: "Main navigation",
+    mobileMenuTitle: "Menu",
+    browseMenu: "Categories",
   },
   hero: {
     ariaLabel: "Hero",
@@ -31,6 +33,7 @@ export const en: Translations = {
       "Great music, signature cocktails, and nights you'll want on repeat.",
     exploreMenu: "Explore Menu",
     reserve: "Book a Table",
+    viewMenu: "View Full Menu",
   },
   about: {
     ariaLabel: "About Loop",
@@ -42,8 +45,20 @@ export const en: Translations = {
   menu: {
     ariaLabel: "Menu",
     tablistAria: "Menu categories",
-    eyebrow: "Flavours",
+    eyebrow: "Our Menu",
     title: "Menu",
+    introEyebrow: "Our Menus",
+    introTitle: "Experience the Art of Cocktail Storytelling",
+    introSubtitle:
+      "Our menu pays homage to the theatre, with each drink telling its own captivating story — from the opening act to the final flourish.",
+    highlightCocktailsTitle: "Cocktails & Snacks",
+    highlightCocktailsText:
+      "A curated selection of iconic cocktails paired with a subtle, thoughtfully crafted food menu.",
+    highlightBeersTitle: "Craft Beer Spotlight",
+    highlightBeersText:
+      "A refined beer list showcasing timeless classics and rare finds for the discerning palate.",
+    highlightCocktailsCta: "View Cocktail Menu",
+    highlightBeersCta: "View Beer List",
     tabs: {
       snacks: "Snacks",
       beers: "Craft Beers",

@@ -6,9 +6,10 @@ import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { MENU_IMAGE_PLACEHOLDER } from "@/lib/constants";
 import {
+  fetchCategoryPayload,
   findProductInPayload,
   formatProductPrices,
-  type MenuCategoryPayload,
+  MENU_TAB_CATEGORIES,
   type MenuProduct,
 } from "@/lib/menu";
 
@@ -48,10 +49,23 @@ export default function ProductDetail({
       if (!hasInitial) setLoading(true);
       setError(false);
       try {
-        const res = await fetch(`/api/menu/${categoryId}`);
-        if (!res.ok) throw new Error("failed");
-        const data: MenuCategoryPayload = await res.json();
-        const found = findProductInPayload(data, productId);
+        const fromQuery = Number(
+          new URLSearchParams(window.location.search).get("category"),
+        );
+        const preferred =
+          Number.isFinite(fromQuery) && fromQuery > 0 ? fromQuery : categoryId;
+        const ids = [
+          preferred,
+          ...Object.values(MENU_TAB_CATEGORIES).flat().filter((id) => id !== preferred),
+        ];
+
+        let found: MenuProduct | null = null;
+        for (const id of ids) {
+          const data = await fetchCategoryPayload(id);
+          if (!data) continue;
+          found = findProductInPayload(data, productId);
+          if (found) break;
+        }
         if (!found) throw new Error("not found");
         setProduct(found);
       } catch {

@@ -29,12 +29,13 @@ function applyThemeClass(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const initial =
-      document.documentElement.classList.contains("light") ? "light" : "dark";
+    const initial = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
     setThemeState(initial);
     applyThemeClass(initial);
     setMounted(true);

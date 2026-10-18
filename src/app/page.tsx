@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import MenuIntro from "@/components/MenuIntro";
 import MenuSection from "@/components/MenuSection";
+import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import FeedbackSection from "@/components/FeedbackSection";
+import FeaturedBanner from "@/components/FeaturedBanner";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 import SkipLink from "@/components/SkipLink";
 import { SITE_URL } from "@/lib/constants";
 import { OG_IMAGE, rootMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   ...rootMetadata,
@@ -31,10 +33,12 @@ export default function Home() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <About />
+        <MenuIntro />
         <MenuSection />
+        <About />
         <Gallery />
         <FeedbackSection />
+        <FeaturedBanner />
         <Footer />
       </main>
     </Providers>

@@ -24,15 +24,29 @@ Open **http://localhost:301** (port **301**, not 3000).
 
 On your phone (same Wi‑Fi): `http://<your-computer-ip>:301` (e.g. `192.168.1.21:301`).
 
-## Production (Vercel + GitHub)
+## Production (GitHub Pages)
 
-1. Push this repo to GitHub (see below).
-2. Import the repo at [vercel.com/new](https://vercel.com/new).
-3. **Root Directory:** leave as `.` (repo root is this project).
-4. **Framework:** Next.js (auto-detected).
-5. Deploy, then add custom domain **www.looppub.live** in Vercel → Project → Settings → Domains.
+Static export — no Vercel/Netlify required.
 
-Deployed site: [www.looppub.live](https://www.looppub.live)
+1. Push to `main` → GitHub Actions builds and deploys Pages.
+2. Repo → **Settings → Pages** → Source: **GitHub Actions**.
+3. Custom domain: `www.looppub.live` (CNAME is in `public/CNAME`).
+
+**DNS (Squarespace / registrar):**
+
+| Type | Host | Value |
+|------|------|--------|
+| CNAME | www | `ahmetkaya01.github.io` |
+| A | @ | `185.199.108.153` |
+| A | @ | `185.199.109.153` |
+| A | @ | `185.199.110.153` |
+| A | @ | `185.199.111.153` |
+
+Remove old Vercel A records (`76.76.21.21`) if still present.
+
+Menu data is baked into `public/menu-cache/` at build time (`npm run menu:sync`).
+
+Deployed site: [www.looppub.live](https://www.looppub.live) · Pages URL: https://ahmetkaya01.github.io/looppub/
 
 ## Push to GitHub
 

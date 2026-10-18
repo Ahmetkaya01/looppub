@@ -20,6 +20,8 @@ export const tr: Translations = {
     openMenu: "Menüyü aç",
     closeMenu: "Menüyü kapat",
     ariaMain: "Ana navigasyon",
+    mobileMenuTitle: "Menü",
+    browseMenu: "Kategoriler",
   },
   hero: {
     ariaLabel: "Giriş",
@@ -31,6 +33,7 @@ export const tr: Translations = {
       "Harika müzikler, imza kokteyller ve tekrar tekrar geleceğiniz geceler.",
     exploreMenu: "Menüyü Keşfet",
     reserve: "Masa Ayırt",
+    viewMenu: "Menüyü Gör",
   },
   about: {
     ariaLabel: "Loop Hakkında",
@@ -42,8 +45,20 @@ export const tr: Translations = {
   menu: {
     ariaLabel: "Menü",
     tablistAria: "Menü kategorileri",
-    eyebrow: "Lezzetler",
+    eyebrow: "Menümüz",
     title: "Menü",
+    introEyebrow: "Menümüz",
+    introTitle: "Kokteyl Hikâyesinin Sanatını Keşfedin",
+    introSubtitle:
+      "Menümüz tiyatroya selam durur — her içecek açılış perdesinden final dokunuşuna kadar kendi büyüleyici hikâyesini anlatır.",
+    highlightCocktailsTitle: "İmza Kokteyller & Atıştırmalıklar",
+    highlightCocktailsText:
+      "Özenle seçilmiş ikonik kokteyller ve incelikle hazırlanmış lezzetli atıştırmalıklar.",
+    highlightCocktailsCta: "Kokteyl Menüsü",
+    highlightBeersTitle: "Craft Bira Seçkisi",
+    highlightBeersText:
+      "Zamansız klasiklerden nadir bulunanlara — seçkin damaklar için rafine bir bira listesi.",
+    highlightBeersCta: "Bira Listesi",
     tabs: {
       snacks: "Atıştırmalıklar",
       beers: "Craft Biralar",

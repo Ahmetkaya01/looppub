@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import ArrowButton from "./ArrowButton";
 import FadeIn from "./FadeIn";
 
 const ABOUT_IMAGE =
@@ -13,31 +14,32 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section-padding bg-page transition-colors duration-500"
+      className="section-padding-large bg-section-light"
       aria-label={t.about.ariaLabel}
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2 lg:gap-24">
         <FadeIn className="order-2 lg:order-1">
-          <p className="font-body text-xs uppercase tracking-[0.3em] text-gold">
-            {t.about.eyebrow}
-          </p>
-          <h2 className="section-title mt-3">{t.about.title}</h2>
-          <div className="gold-divider !mx-0 !mt-5" />
-          <p className="mt-8 font-body text-base leading-relaxed text-muted md:text-lg">
+          <p className="eyebrow">{t.about.eyebrow}</p>
+          <h2 className="section-title mt-4">{t.about.title}</h2>
+          <p className="mt-8 max-w-xl font-body text-base font-light leading-8 text-subtle md:text-lg">
             {t.about.text}
           </p>
+          <div className="mt-10">
+            <ArrowButton href="#menu" variant="maroon">
+              {t.hero.exploreMenu}
+            </ArrowButton>
+          </div>
         </FadeIn>
 
-        <FadeIn className="order-1 lg:order-2" delay={120}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[var(--border)] shadow-glass lg:aspect-[5/4]">
+        <FadeIn className="order-1 lg:order-2" delay={160}>
+          <div className="moody-image relative aspect-[4/5] overflow-hidden">
             <Image
               src={ABOUT_IMAGE}
               alt={t.about.imageAlt}
               fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.03]"
+              sizes="(max-width: 1024px) 100vw, 45vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-page/70 to-transparent" />
           </div>
         </FadeIn>
       </div>

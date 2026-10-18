@@ -4,28 +4,33 @@ import ProductDetail from "@/components/ProductDetail";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
-import { fetchProductForSeo } from "@/lib/menu-server";
+import {
+  fetchProductForSeo,
+  listCachedProductParams,
+} from "@/lib/menu-server";
 import { buildProductMetadata } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ productId: string }>;
-  searchParams: Promise<{ category?: string }>;
 };
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return listCachedProductParams();
+}
 
 export async function generateMetadata({
   params,
-  searchParams,
 }: PageProps): Promise<Metadata> {
   const { productId } = await params;
-  const { category } = await searchParams;
   const id = Number(productId);
-  const categoryId = Number(category) || 20;
 
   if (!Number.isFinite(id) || id <= 0) {
     return { title: "Menu", robots: { index: false, follow: true } };
   }
 
-  const product = await fetchProductForSeo(id, categoryId);
+  const product = await fetchProductForSeo(id, 20);
   if (!product) {
     return {
       title: "Menu item",
@@ -42,23 +47,21 @@ export async function generateMetadata({
     product.name,
     product.description,
     id,
-    categoryId,
+    20,
     image,
   );
 }
 
-export default async function MenuProductPage({
-  params,
-  searchParams,
-}: PageProps) {
+export default async function MenuProductPage({ params }: PageProps) {
   const { productId } = await params;
-  const { category } = await searchParams;
   const id = Number(productId);
-  const categoryId = Number(category) || 20;
   const product =
     Number.isFinite(id) && id > 0
-      ? await fetchProductForSeo(id, categoryId)
+      ? await fetchProductForSeo(id, 20)
       : null;
+
+  // Prefer category from client query via ProductDetail fetch; SEO uses scan.
+  const categoryId = 20;
 
   return (
     <Providers>

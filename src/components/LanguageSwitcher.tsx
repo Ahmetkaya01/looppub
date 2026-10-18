@@ -9,7 +9,13 @@ const LOCALE_FLAGS: Record<Locale, string> = {
   ru: "🇷🇺",
 };
 
-export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
+export default function LanguageSwitcher({
+  compact = false,
+  light = false,
+}: {
+  compact?: boolean;
+  light?: boolean;
+}) {
   const { locale, setLocale, t } = useLanguage();
 
   const options: { code: Locale; label: string; flag: string }[] = [
@@ -18,9 +24,13 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
     { code: "ru", label: t.language.ru, flag: LOCALE_FLAGS.ru },
   ];
 
+  const shellClass = light
+    ? "border-maple/30 bg-black/10"
+    : "border-[var(--border)] bg-[var(--surface)]";
+
   return (
     <div
-      className="flex items-center gap-0.5 rounded-md border border-[var(--border)] bg-[var(--surface)] p-0.5 backdrop-blur-md"
+      className={`flex items-center gap-0.5 border p-0.5 backdrop-blur-md ${shellClass}`}
       role="group"
       aria-label={t.language.switchTo}
     >
@@ -29,10 +39,14 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
           key={opt.code}
           type="button"
           onClick={() => setLocale(opt.code)}
-          className={`flex min-h-[36px] min-w-[36px] items-center justify-center gap-1 rounded-sm px-2 py-1 font-body text-[10px] font-medium uppercase tracking-wider transition-all duration-300 md:min-h-[40px] md:px-2.5 md:py-1.5 md:text-xs ${
+          className={`flex min-h-[36px] min-w-[36px] items-center justify-center gap-1 px-2 py-1 font-body text-[10px] font-medium uppercase tracking-nav transition-all duration-300 md:min-h-[40px] md:px-2.5 md:py-1.5 md:text-xs ${
             locale === opt.code
-              ? "bg-gold text-[var(--on-accent)] shadow-sm"
-              : "text-muted hover:text-gold"
+              ? light
+                ? "bg-maple text-maroon"
+                : "bg-maroon text-maple"
+              : light
+                ? "text-maple/80 hover:text-maple"
+                : "text-muted hover:text-maroon"
           }`}
           aria-pressed={locale === opt.code}
           aria-label={opt.label}

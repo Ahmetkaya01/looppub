@@ -16,6 +16,8 @@ export interface Translations {
     openMenu: string;
     closeMenu: string;
     ariaMain: string;
+    mobileMenuTitle: string;
+    browseMenu: string;
   };
   hero: {
     ariaLabel: string;
@@ -26,6 +28,7 @@ export interface Translations {
     subtitle: string;
     exploreMenu: string;
     reserve: string;
+    viewMenu: string;
   };
   about: {
     ariaLabel: string;
@@ -39,6 +42,15 @@ export interface Translations {
     tablistAria: string;
     eyebrow: string;
     title: string;
+    introEyebrow: string;
+    introTitle: string;
+    introSubtitle: string;
+    highlightCocktailsTitle: string;
+    highlightCocktailsText: string;
+    highlightCocktailsCta: string;
+    highlightBeersTitle: string;
+    highlightBeersText: string;
+    highlightBeersCta: string;
     tabs: Record<MenuTabId, string>;
     loading: string;
     error: string;

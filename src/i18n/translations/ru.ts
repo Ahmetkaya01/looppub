@@ -20,6 +20,8 @@ export const ru: Translations = {
     openMenu: "Открыть меню",
     closeMenu: "Закрыть меню",
     ariaMain: "Основная навигация",
+    mobileMenuTitle: "Меню",
+    browseMenu: "Категории",
   },
   hero: {
     ariaLabel: "Главный экран",
@@ -31,6 +33,7 @@ export const ru: Translations = {
       "Отличная музыка, фирменные коктейли и вечера, к которым хочется возвращаться.",
     exploreMenu: "Смотреть меню",
     reserve: "Забронировать стол",
+    viewMenu: "Полное меню",
   },
   about: {
     ariaLabel: "О Loop",
@@ -42,8 +45,20 @@ export const ru: Translations = {
   menu: {
     ariaLabel: "Меню",
     tablistAria: "Категории меню",
-    eyebrow: "Вкусы",
+    eyebrow: "Наше меню",
     title: "Меню",
+    introEyebrow: "Наше меню",
+    introTitle: "Искусство коктейльного повествования",
+    introSubtitle:
+      "Наше меню — дань театру: каждый напиток рассказывает свою историю — от первого акта до финального аккорда.",
+    highlightCocktailsTitle: "Коктейли и закуски",
+    highlightCocktailsText:
+      "Тщательно подобранные коктейли в паре с изысканными закусками.",
+    highlightBeersTitle: "Крафт-пиво",
+    highlightBeersText:
+      "Изысканная пивная карта — от классики до редких находок для ценителей.",
+    highlightCocktailsCta: "Меню коктейлей",
+    highlightBeersCta: "Пивная карта",
     tabs: {
       snacks: "Закуски",
       beers: "Крафт-пиво",

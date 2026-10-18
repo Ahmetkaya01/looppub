@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { CONTACT, GALLERY_IMAGES, INSTAGRAM_GALLERY } from "@/lib/constants";
+import ArrowButton from "./ArrowButton";
 import FadeIn from "./FadeIn";
 import InstagramEmbed from "./InstagramEmbed";
 
@@ -13,62 +14,78 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="section-padding bg-page transition-colors duration-500"
+      className="section-padding-large bg-maple"
       aria-label={t.gallery.ariaLabel}
     >
       <div className="mx-auto max-w-7xl">
         <FadeIn>
-          <div className="text-center">
-            <p className="font-body text-xs uppercase tracking-[0.3em] text-gold">
-              {t.gallery.eyebrow}
-            </p>
-            <h2 className="section-title mt-3">{t.gallery.title}</h2>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">{t.gallery.eyebrow}</p>
+            <h2 className="section-title mt-4">{t.gallery.title}</h2>
             <p className="section-subtitle mx-auto">{t.gallery.subtitle}</p>
-            <div className="gold-divider" />
+            <div className="vertical-line" />
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={120}>
+          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {GALLERY_IMAGES.slice(0, 3).map((img, index) => (
+              <article key={img.src} className="event-card group">
+                <div className="moody-image relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={t.gallery.images[index]}
+                    fill
+                    className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="font-body text-xs uppercase tracking-nav text-maroon/60">
+                    Loop Pub
+                  </p>
+                  <h3 className="mt-2 font-display text-xl text-maroon">
+                    {t.gallery.images[index]}
+                  </h3>
+                </div>
+              </article>
+            ))}
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={160}>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {GALLERY_IMAGES.slice(3, 6).map((img, index) => (
+              <figure
+                key={img.src}
+                className="moody-image group relative aspect-[4/5] overflow-hidden"
+              >
+                <Image
+                  src={img.src}
+                  alt={t.gallery.images[index + 3]}
+                  fill
+                  className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </figure>
+            ))}
           </div>
         </FadeIn>
 
         {INSTAGRAM_GALLERY.length > 0 && (
-          <FadeIn delay={100}>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {INSTAGRAM_GALLERY.map((item) => (
+          <FadeIn delay={200}>
+            <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {INSTAGRAM_GALLERY.slice(0, 3).map((item) => (
                 <InstagramEmbed key={item.url} url={item.url} label={item.label} />
               ))}
             </div>
           </FadeIn>
         )}
 
-        <FadeIn delay={150}>
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-3">
-            {GALLERY_IMAGES.slice(0, 6).map((img, index) => (
-              <figure
-                key={img.src}
-                className={`group relative overflow-hidden rounded-lg border border-[var(--border)] shadow-glass ${
-                  index === 0 ? "col-span-2 row-span-2 aspect-[4/3] md:aspect-auto md:min-h-[320px]" : "aspect-square"
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={t.gallery.images[index]}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-page/0 transition-colors duration-300 group-hover:bg-page/25" />
-              </figure>
-            ))}
-          </div>
-        </FadeIn>
-
-        <div className="mt-10 text-center">
-          <Link
-            href={CONTACT.social.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary inline-flex"
-          >
+        <div className="mt-14 text-center">
+          <ArrowButton href={CONTACT.social.instagram} variant="maroon">
             {t.gallery.followInstagram}
-          </Link>
+          </ArrowButton>
         </div>
       </div>
     </section>

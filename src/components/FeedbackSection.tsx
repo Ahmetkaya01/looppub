@@ -44,28 +44,23 @@ export default function FeedbackSection() {
   return (
     <section
       id="feedback"
-      className="section-padding border-t border-[var(--border)] bg-page transition-colors duration-500"
+      className="section-padding-large bg-section-light"
       aria-label={t.feedback.ariaLabel}
     >
       <div className="mx-auto max-w-3xl">
         <FadeIn>
           <div className="text-center">
-            <p className="font-body text-xs uppercase tracking-[0.3em] text-gold">
-              {t.feedback.eyebrow}
-            </p>
-            <h2 className="section-title mt-3">{t.feedback.title}</h2>
+            <p className="eyebrow">{t.feedback.eyebrow}</p>
+            <h2 className="section-title mt-4">{t.feedback.title}</h2>
             <p className="section-subtitle mx-auto">{t.feedback.subtitle}</p>
-            <div className="gold-divider" />
+            <div className="vertical-line" />
           </div>
         </FadeIn>
 
         <FadeIn delay={100}>
-          <form
-            onSubmit={handleSubmit}
-            className="glass-card mt-12 p-8 md:p-10"
-          >
+          <form onSubmit={handleSubmit} className="glass-card mt-12 p-8 md:p-10">
             <fieldset>
-              <legend className="font-body text-sm font-medium uppercase tracking-wider text-ink">
+              <legend className="font-body text-sm font-medium uppercase tracking-nav text-maroon">
                 {t.feedback.ratingLabel}
               </legend>
               <div
@@ -85,7 +80,7 @@ export default function FeedbackSection() {
                     onMouseLeave={() => setHoverRating(0)}
                     onFocus={() => setHoverRating(value)}
                     onBlur={() => setHoverRating(0)}
-                    className="rounded-md p-2 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                    className="rounded-md p-2 transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon/30"
                   >
                     <StarIcon
                       filled={value <= displayRating}
@@ -95,7 +90,7 @@ export default function FeedbackSection() {
                 ))}
               </div>
               {rating > 0 && (
-                <p className="mt-3 text-center text-sm text-muted">
+                <p className="mt-3 text-center text-sm text-subtle">
                   {t.feedback.ratingHint.replace("{n}", String(rating))}
                 </p>
               )}
@@ -105,7 +100,7 @@ export default function FeedbackSection() {
               <div>
                 <label
                   htmlFor="feedback-message"
-                  className="font-body text-xs uppercase tracking-wider text-muted"
+                  className="font-body text-xs uppercase tracking-nav text-subtle"
                 >
                   {t.feedback.messageLabel} *
                 </label>
@@ -119,7 +114,7 @@ export default function FeedbackSection() {
                     setForm((f) => ({ ...f, message: e.target.value }))
                   }
                   placeholder={t.feedback.messagePlaceholder}
-                  className="mt-2 w-full resize-none rounded-md border border-[var(--border)] bg-transparent px-4 py-3 text-ink outline-none transition-colors focus:border-gold"
+                  className="mt-2 w-full resize-none border border-[var(--border)] bg-transparent px-4 py-3 text-maroon outline-none transition-colors focus:border-maroon/50"
                 />
               </div>
 
@@ -127,7 +122,7 @@ export default function FeedbackSection() {
                 <div>
                   <label
                     htmlFor="feedback-name"
-                    className="font-body text-xs uppercase tracking-wider text-muted"
+                    className="font-body text-xs uppercase tracking-nav text-subtle"
                   >
                     {t.feedback.nameLabel}
                   </label>
@@ -141,13 +136,13 @@ export default function FeedbackSection() {
                       setForm((f) => ({ ...f, name: e.target.value }))
                     }
                     placeholder={t.feedback.namePlaceholder}
-                    className="mt-2 w-full rounded-md border border-[var(--border)] bg-transparent px-4 py-3 text-ink outline-none transition-colors focus:border-gold"
+                    className="mt-2 w-full border border-[var(--border)] bg-transparent px-4 py-3 text-maroon outline-none transition-colors focus:border-maroon/50"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="feedback-email"
-                    className="font-body text-xs uppercase tracking-wider text-muted"
+                    className="font-body text-xs uppercase tracking-nav text-subtle"
                   >
                     {t.feedback.emailLabel}
                   </label>
@@ -161,7 +156,7 @@ export default function FeedbackSection() {
                       setForm((f) => ({ ...f, email: e.target.value }))
                     }
                     placeholder={t.feedback.emailPlaceholder}
-                    className="mt-2 w-full rounded-md border border-[var(--border)] bg-transparent px-4 py-3 text-ink outline-none transition-colors focus:border-gold"
+                    className="mt-2 w-full border border-[var(--border)] bg-transparent px-4 py-3 text-maroon outline-none transition-colors focus:border-maroon/50"
                   />
                 </div>
               </div>
@@ -170,18 +165,19 @@ export default function FeedbackSection() {
             <button
               type="submit"
               disabled={rating < 1 || !form.message.trim()}
-              className="btn-primary mt-8 w-full disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+              className="btn-1806 mt-8 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {t.feedback.submit}
+              <span className="btn-1806-offset-maroon" aria-hidden />
+              <span className="btn-1806-inner-maroon">{t.feedback.submit}</span>
             </button>
 
             {submitted && (
-              <p className="mt-4 text-center text-sm text-muted" role="status">
+              <p className="mt-4 text-center text-sm text-subtle" role="status">
                 {t.feedback.thankYou}
               </p>
             )}
 
-            <p className="mt-6 text-center text-xs text-muted">
+            <p className="mt-6 text-center text-xs text-subtle">
               {t.feedback.note}
             </p>
           </form>
@@ -200,7 +196,7 @@ function StarIcon({
 }) {
   return (
     <svg
-      className={`${className ?? ""} ${filled ? "text-gold" : "text-[var(--border)]"} transition-colors`}
+      className={`${className ?? ""} ${filled ? "text-maroon" : "text-maroon/20"} transition-colors`}
       viewBox="0 0 24 24"
       fill={filled ? "currentColor" : "none"}
       stroke="currentColor"
